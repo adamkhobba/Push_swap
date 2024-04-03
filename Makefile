@@ -12,7 +12,7 @@ NAME = push_swap
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME) -fsanitize=address
 
 clean :
 	rm -r $(OBJ)
