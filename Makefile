@@ -3,8 +3,8 @@ CC = cc
 # CFLAGS = -Wall -Wextra -Werror
 
 SRC = src/create_stack.c src/push_swap.c\
-			utils/ft_lstadd_front_bonus.c utils/ft_strlen.c utils/ft_atoi.c
-
+			utils/ft_lstadd_front_bonus.c utils/ft_strlen.c utils/ft_atoi.c\
+			utils/ft_lstnew_bonus.c
 OBJ = ${SRC:.c=.o}
 
 NAME = push_swap
