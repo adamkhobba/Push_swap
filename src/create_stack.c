@@ -23,10 +23,9 @@ t_list *create_stack_a(int ac, char **av) {
   return (stack_a);
 }
 
-t_list *create_stack_b(int ac, char **av)
-{
+t_list *create_stack_b(int ac, char **av) {
   t_list *stack_b;
-  
-  stack_b = malloc(sizeof(t_list)); 
+
+  stack_b = malloc(sizeof(t_list));
   return (stack_b);
 }

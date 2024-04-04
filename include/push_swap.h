@@ -9,9 +9,11 @@ typedef struct s_list {
   int data;
   struct s_list *next;
 } t_list;
-// src
 
+// src
 t_list *create_stack_a(int ac, char **av);
+t_list *create_stack_b(int ac, char **av);
+t_list *push_stack(t_list **lst, int n);
 // utils
 t_list *ft_create_node(int nbr);
 t_list *ft_lstnew(void *content);
