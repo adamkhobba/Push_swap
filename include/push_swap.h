@@ -16,6 +16,7 @@ t_list *push_stack(t_list **lst, int n);
 t_list *push_stack(t_list **lst, int n);
 // move
 int ft_push(t_list **from, t_list **to);
+int ft_rotate(t_list **list);
 int ft_swap(t_list **lst);
 // utils
 t_list *ft_create_node(int nbr);

@@ -13,12 +13,27 @@ int ft_push(t_list **from, t_list **to) {
 }
 
 int ft_swap(t_list **lst) {
-  t_list *tmp;
-
+  int tmp;
   if (!*lst)
     return (0);
-  tmp = *lst;
-  *lst = (*lst)->next;
-  (*lst)->next = tmp;
+  tmp = (*lst)->data;
+  (*lst)->data = (*lst)->next->data;
+  (*lst)->next->data = tmp;
+  return (1);
+}
+
+int ft_rotate(t_list **list)
+{
+  int tmp; 
+  t_list *current;
+
+  current = *list;
+  tmp = (*list)->data;
+  while(current->next) 
+  {
+    current = current->next;
+  }
+  (*list)->data = current->data;
+  current->data = tmp;
   return (1);
 }
