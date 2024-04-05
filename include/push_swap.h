@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct s_list {
   int data;
@@ -16,7 +17,8 @@ t_list *push_stack(t_list **lst, int n);
 t_list *push_stack(t_list **lst, int n);
 // move
 int ft_push(t_list **from, t_list **to);
-int ft_rotate(t_list **list);
+t_list *ft_rotate(t_list **list);
+t_list *ft_reverse_rotate(t_list **list);
 int ft_swap(t_list **lst);
 // utils
 t_list *ft_create_node(int nbr);

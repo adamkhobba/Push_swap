@@ -18,11 +18,12 @@ int main(int ac, char **av) {
     top = top->next;
   }
   printf("stack_a swaped\n");
-  ft_rotate(&stack_a);
+  stack_a = ft_reverse_rotate(&stack_a);
   top = stack_a;
   while (top) {
     printf("%d\n", top->data);
     top = top->next;
+    // sleep(1);
   }
   return (0);
 }

@@ -14,6 +14,7 @@ int ft_push(t_list **from, t_list **to) {
 
 int ft_swap(t_list **lst) {
   int tmp;
+
   if (!*lst)
     return (0);
   tmp = (*lst)->data;
@@ -22,18 +23,39 @@ int ft_swap(t_list **lst) {
   return (1);
 }
 
-int ft_rotate(t_list **list)
+t_list *ft_rotate(t_list **list) 
 {
-  int tmp; 
+  t_list *tmp;
   t_list *current;
 
-  current = *list;
-  tmp = (*list)->data;
-  while(current->next) 
+  if (!*list)
+    return (NULL);
+  tmp = (*list);
+  current = (*list)->next;
+  *list = (*list)->next;
+  while (current->next)
+    current = current->next;
+  current->next = tmp;
+  tmp->next = NULL;
+  return (*list);
+}
+
+t_list *ft_reverse_rotate(t_list **list) {
+  t_list *tmp;
+  t_list *current;
+  t_list *var;
+
+  if (!*list)
+    return(NULL);  
+  tmp = (*list);
+  current = (*list)->next->next;
+  while (current->next)
   {
+    var = current;
     current = current->next;
   }
-  (*list)->data = current->data;
-  current->data = tmp;
-  return (1);
+  *list = current;
+  current->next = tmp;
+  var->next = NULL;
+	return (*list);
 }
