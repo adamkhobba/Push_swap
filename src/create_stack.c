@@ -24,11 +24,3 @@ t_list	*create_stack_a(int ac, char **av)
 		stack_a = push_stack(&stack_a, ft_atoi(av[ac]));
 	return (stack_a);
 }
-
-t_list	*create_stack_b(int ac, char **av)
-{
-	t_list	*stack_b;
-
-	stack_b = malloc(sizeof(t_list));
-	return (stack_b);
-}

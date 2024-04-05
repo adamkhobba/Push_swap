@@ -11,3 +11,14 @@ int ft_push(t_list **from, t_list **to) {
   free(tmp);
   return (1);
 }
+
+int ft_swap(t_list **lst) {
+  t_list *tmp;
+
+  if (!*lst)
+    return (0);
+  tmp = *lst;
+  *lst = (*lst)->next;
+  (*lst)->next = tmp;
+  return (1);
+}

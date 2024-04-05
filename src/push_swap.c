@@ -1,4 +1,5 @@
 #include "../include/push_swap.h"
+#include <stdio.h>
 
 int main(int ac, char **av) {
   t_list *top;
@@ -16,18 +17,17 @@ int main(int ac, char **av) {
     printf("%d\n", top->data);
     top = top->next;
   }
-  ft_push(&stack_a, &stack_b);
-  printf("stack b\n");
-  tmp = stack_b;
-  while (tmp) {
-    printf("%d\n", tmp->data);
-    tmp = tmp->next;
-  }
-  printf("stack a again\n");
-  tmp = stack_a;
-  while (tmp) {
-    printf("%d\n", tmp->data);
-    tmp = tmp->next;
-  }
+  printf("stack_a swaped\n");
+  ft_swap(&stack_a);
+  top = stack_a;
+  // while (top) {
+  printf("%d\n", top->data);
+  top = top->next;
+  printf("%d\n", top->data);
+  top = top->next;
+  printf("%d\n", top->data);
+  top = top->next;
+  printf("%d\n", top->data);
+  // }
   return (0);
 }
