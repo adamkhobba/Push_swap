@@ -14,8 +14,9 @@ CC = cc
 
 # CFLAGS = -Wall -Wextra -Werror
 
-SRC = src/create_stack.c src/push_swap.c src/push.c\
-			utils/ft_lstadd_front_bonus.c utils/ft_strlen.c utils/ft_atoi.c\
+SRC = src/create_stack.c src/push_swap.c src/parsing.c src/ft_split.c\
+			src/moves.c\
+			utils/ft_lstadd_front_bonus.c utils/small_ft.c utils/ft_atoi.c\
 			utils/ft_lstnew_bonus.c utils/ft_lstdelone_bonus.c
 OBJ = ${SRC:.c=.o}
 

@@ -22,6 +22,8 @@ int main(int ac, char **av) {
   stack_b = NULL;
   if (ac < 2)
     return (1);
+  if (!ft_all_checks((av + 1), ac))
+    return (1);
   top = create_stack_a(ac - 1, av);
   stack_a = top;
   printf("stack a\n");
