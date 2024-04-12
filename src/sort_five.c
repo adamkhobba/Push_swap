@@ -2,7 +2,6 @@
 
 int ft_search_min(t_list **stack) {
   t_list *tmp;
-  t_list *current;
   int counter;
   int min;
 
