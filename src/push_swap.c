@@ -31,12 +31,6 @@ int main(int ac, char **av) {
     printf("%d\n", top->data);
     top = top->next;
   }
-  printf("stack_a swaped\n");
-  stack_a = ft_reverse_rotate(&stack_a);
-  top = stack_a;
-  while (top) {
-    printf("%d\n", top->data);
-    top = top->next;
-  }
+  printf("%d", ft_search_min(&stack_a));
   return (0);
 }
