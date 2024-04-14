@@ -28,7 +28,7 @@ void ft_algo_of_five(t_list **stack_a, t_list **stack_b);
 // move
 int ft_push(t_list **from, t_list **to);
 t_list *ft_rotate(t_list **list);
-t_list *ft_reverse_rotate(t_list **list);
+t_list **ft_reverse_rotate(t_list **list);
 int ft_swap(t_list **lst);
 
 // utils

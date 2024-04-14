@@ -1,5 +1,6 @@
 #include "../include/push_swap.h"
 #include <stdio.h>
+#include <unistd.h>
 
 int ft_search_min(t_list **stack) {
   t_list *tmp;
@@ -29,9 +30,8 @@ int ft_search_min(t_list **stack) {
 void ft_sort_three(t_list **stack) {
   if ((*stack)->data >= (*stack)->next->data)
     ft_swap(stack);
-  if ((*stack)->data >= (*stack)->next->next->data) {
-    ft_reverse_rotate(stack);
-  }
+  if ((*stack)->data >= (*stack)->next->next->data)
+    stack = ft_reverse_rotate(stack);
 }
 
 void ft_sort_five(t_list **stack_a, t_list **stack_b) {

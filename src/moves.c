@@ -51,7 +51,7 @@ t_list *ft_rotate(t_list **list) {
   return (*list);
 }
 
-t_list *ft_reverse_rotate(t_list **list) {
+t_list **ft_reverse_rotate(t_list **list) {
   t_list *tmp;
   t_list *current;
   t_list *var;
@@ -59,7 +59,7 @@ t_list *ft_reverse_rotate(t_list **list) {
   if (!*list)
     return (NULL);
   tmp = (*list);
-  current = (*list)->next->next;
+  current = (*list)->next;
   while (current->next) {
     var = current;
     current = current->next;
@@ -67,5 +67,5 @@ t_list *ft_reverse_rotate(t_list **list) {
   *list = current;
   current->next = tmp;
   var->next = NULL;
-  return (*list);
+  return (list);
 }
