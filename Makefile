@@ -15,8 +15,10 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = src/create_stack.c src/push_swap.c src/moves.c src/sort_five.c src/parsing.c \
- 		utils/small_ft.c utils/ft_lstadd_front_bonus.c  utils/ft_atoi.c\
-			utils/ft_lstnew_bonus.c utils/ft_lstdelone_bonus.c
+			src/split_input.c src/ft_split.c\
+		utils/small_ft.c utils/ft_lstadd_front_bonus.c  utils/ft_atoi.c\
+		utils/ft_lstnew_bonus.c utils/ft_lstdelone_bonus.c utils/ft_lstsize_bonus.c utils/ft_strdup.c
+
 OBJ = ${SRC:.c=.o}
 
 NAME = push_swap

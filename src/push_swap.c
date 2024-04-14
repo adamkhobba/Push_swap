@@ -13,23 +13,51 @@
 #include "../include/push_swap.h"
 #include <stdio.h>
 
+// int main(int ac, char **av) {
+//   char **s;
+//   int i;
+//
+//   i = 0;
+//   (void)ac;
+//   s = split_input(ac, av + 1);
+//   while (s[i]) {
+//     printf("%s\n", s[i]);
+//     i++;
+//   }
+// }
+
 int main(int ac, char **av) {
   t_list *top;
   t_list *stack_b;
   t_list *stack_a;
+  char **s;
 
   stack_b = NULL;
   if (ac < 2)
     return (1);
-  if (!ft_all_checks((av + 1), ac))
+
+  s = split_input(ac, av + 1);
+  if (!ft_all_checks(s))
     return (1);
-  top = create_stack_a(ac - 1, av);
+  top = create_stack_a(s);
   stack_a = top;
   printf("stack a\n");
   while (top) {
     printf("%d\n", top->data);
     top = top->next;
   }
-  printf("%d", ft_search_min(&stack_a));
+  ft_algo_of_five(&stack_a, &stack_b);
+  printf("stack a after\n");
+  top = stack_a;
+  while (top) {
+    printf("%d\n", top->data);
+    top = top->next;
+  }
+  printf("stack b \n");
+  top = stack_b;
+  while (top) {
+    printf("%d\n", top->data);
+    top = top->next;
+  }
   return (0);
 }

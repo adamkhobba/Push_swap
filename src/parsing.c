@@ -1,12 +1,11 @@
 #include "../include/push_swap.h"
 
-int ft_check_num(char **s, int ac) {
+int ft_check_num(char **s) {
   int i;
   int j;
 
   i = 0;
-
-  while (--ac) {
+  while (s[i]) {
     j = 0;
     while (s[i][j]) {
       if (s[i][j] == '-')
@@ -61,8 +60,8 @@ int ft_dup_num(char **s) {
   return (1);
 }
 
-int ft_all_checks(char **s, int ac) {
-  if (!ft_check_num(s, ac))
+int ft_all_checks(char **s) {
+  if (!ft_check_num(s))
     return (0);
   if (!ft_bigger_int(s))
     return (0);

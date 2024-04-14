@@ -22,15 +22,18 @@ t_list *push_stack(t_list **lst, int n) {
   return (node);
 }
 
-t_list *create_stack_a(int ac, char **av) {
+t_list *create_stack_a(char **s) {
   int bottom;
   t_list *stack_a;
   void *tmp;
+  int index;
 
   tmp = &bottom;
-  bottom = ft_atoi(av[ac]);
+  index = ft_count_strs(s);
+  bottom = ft_atoi(s[index - 1]);
   stack_a = ft_lstnew(tmp);
-  while (--ac)
-    stack_a = push_stack(&stack_a, ft_atoi(av[ac]));
+  index -= 2;
+  while (index >= 0)
+    stack_a = push_stack(&stack_a, ft_atoi(s[index--]));
   return (stack_a);
 }

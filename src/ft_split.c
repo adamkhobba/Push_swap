@@ -2,21 +2,23 @@
 #include <stdlib.h>
 #include <string.h>
 
-int ft_counte_word(char *s, char c) {
+int ft_count_word(char *s, char c) {
 
   int counter;
   int i;
 
   i = 0;
   counter = 0;
-  while (s[i] == c)
+  while (s[i] && s[i] == c)
     i++;
   while (s[i]) {
-    if (s[i] != c)
+    if (s[i] != c) {
       counter++;
-    while (s[i] != c)
+    }
+    while (s[i] && s[i] != c)
       i++;
-    i++;
+    if (s[i])
+      i++;
   }
   return (counter);
 }
@@ -43,7 +45,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len) {
     return (NULL);
   if (len > ft_strlen(s) - start)
     len = ft_strlen(s) - start;
-  if (ft_strlen(s) <= start) {
+  if ((unsigned int)ft_strlen(s) <= start) {
     ptr = malloc(1 * sizeof(char));
     if (!ptr)
       return (NULL);
@@ -83,7 +85,7 @@ char **ft_split(char *str, char c) {
   char **s;
   int counter;
 
-  counter = ft_counte_word(str, c);
+  counter = ft_count_word(str, c);
   s = ft_anything(str, c, counter);
   return (s);
 }
