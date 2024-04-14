@@ -46,12 +46,13 @@ int main(int ac, char **av) {
     printf("%d\n", top->data);
     top = top->next;
   }
-  ft_algo_of_five(&stack_a, &stack_b);
+  ft_sort_five(&stack_a, &stack_b);
   printf("stack a after\n");
   top = stack_a;
   while (top) {
     printf("%d\n", top->data);
     top = top->next;
+    sleep(1);
   }
   printf("stack b \n");
   top = stack_b;

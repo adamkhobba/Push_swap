@@ -32,6 +32,7 @@ t_list *ft_reverse_rotate(t_list **list);
 int ft_swap(t_list **lst);
 
 // utils
+void ft_sort_five(t_list **stack_a, t_list **stack_b);
 int ft_isdigit(int c);
 char **ft_strdup_pro(char **s);
 char *ft_strdup(const char *s);
@@ -41,6 +42,7 @@ long ft_atoi(const char *nptr);
 char *ft_strjoin(char const *s1, char const *s2);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 char *ft_strdup(const char *s);
+
 // list fucntion
 t_list *ft_create_node(int nbr);
 t_list *ft_create_node(int nbr);
