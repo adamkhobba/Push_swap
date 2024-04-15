@@ -54,11 +54,5 @@ int main(int ac, char **av) {
     top = top->next;
     sleep(1);
   }
-  printf("stack b \n");
-  top = stack_b;
-  while (top) {
-    printf("%d\n", top->data);
-    top = top->next;
-  }
   return (0);
 }

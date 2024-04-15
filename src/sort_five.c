@@ -1,6 +1,4 @@
 #include "../include/push_swap.h"
-#include <stdio.h>
-#include <unistd.h>
 
 int ft_search_min(t_list **stack) {
   t_list *tmp;
@@ -28,18 +26,38 @@ int ft_search_min(t_list **stack) {
 }
 
 void ft_sort_three(t_list **stack) {
-  if ((*stack)->data >= (*stack)->next->data)
-    ft_swap(stack);
-  if ((*stack)->data >= (*stack)->next->next->data)
-    stack = ft_reverse_rotate(stack);
+  int i;
+
+  i = 0;
+  while (i < 3) {
+    if (!(*stack)->next)
+      return;
+    if ((*stack)->data >= (*stack)->next->data)
+      ft_swap(stack);
+    if (!(*stack)->next->next)
+      return;
+    if ((*stack)->next->data >= (*stack)->next->next->data)
+      stack = ft_reverse_rotate(stack);
+    i++;
+  }
+}
+
+void ft_push_back(t_list **stack_a, t_list **stack_b) {
+  int i;
+
+  i = 2;
+  while (i--) {
+    ft_push(stack_b, stack_a);
+  }
 }
 
 void ft_sort_five(t_list **stack_a, t_list **stack_b) {
-  ft_algo_of_five(stack_a, stack_b);
+  ft_push_the_lowest(stack_a, stack_b);
   ft_sort_three(stack_a);
+  ft_push_back(stack_a, stack_b);
 }
 
-void ft_algo_of_five(t_list **stack_a, t_list **stack_b) {
+void ft_push_the_lowest(t_list **stack_a, t_list **stack_b) {
   int list_size;
   int positon;
 

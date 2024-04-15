@@ -23,7 +23,8 @@ char **ft_split(char *str, char c);
 char **split_input(int ac, char **av);
 
 // sort five
-void ft_algo_of_five(t_list **stack_a, t_list **stack_b);
+
+void ft_push_the_lowest(t_list **stack_a, t_list **stack_b);
 
 // move
 int ft_push(t_list **from, t_list **to);
