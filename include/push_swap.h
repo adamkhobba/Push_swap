@@ -28,15 +28,16 @@ int					ft_not_soted(char **s);
 void				ft_push_the_lowest(t_list **stack_a, t_list **stack_b);
 
 // move
-int					ft_push(t_list **from, t_list **to);
-t_list				*ft_rotate(t_list **list);
-t_list				**ft_reverse_rotate(t_list **list);
-int					ft_swap(t_list **lst);
+int					ft_push(t_list **from, t_list **to, char *s);
+t_list				*ft_rotate(t_list **list, char c);
+t_list				**ft_reverse_rotate(t_list **list, char c);
+int					ft_swap(t_list **lst, char c);
 
 // utils
 void				ft_sort_five(t_list **stack_a, t_list **stack_b);
-void	ft_putstr(char *s);
+void	ft_putstr(char *s, int fd);
 int					ft_isdigit(int c);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 char				**ft_strdup_pro(char **s);
 char				*ft_strdup(const char *s);
 int					ft_count_strs(char **s);

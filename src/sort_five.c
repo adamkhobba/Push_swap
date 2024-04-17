@@ -38,22 +38,20 @@ void	ft_sort_three(t_list **stack)
 		if (!(*stack)->next)
 			return ;
 		if ((*stack)->data >= (*stack)->next->data)
-			ft_swap(stack);
+			ft_swap(stack, 'A');
 		if (!(*stack)->next->next)
 			return ;
 		if ((*stack)->next->data >= (*stack)->next->next->data)
-			stack = ft_reverse_rotate(stack);
+			stack = ft_reverse_rotate(stack, 'A');
 		i++;
 	}
 }
 
 void	ft_push_back(t_list **stack_a, t_list **stack_b)
 {
-	// int i;
-	// i = 2;
 	while (*stack_b)
 	{
-		ft_push(stack_b, stack_a);
+		ft_push(stack_b, stack_a, "BA");
 	}
 }
 
@@ -78,12 +76,12 @@ void	ft_push_the_lowest(t_list **stack_a, t_list **stack_b)
 		while (positon != 1)
 		{
 			if (positon == 2)
-				ft_swap(stack_a);
+				ft_swap(stack_a, 'A');
 			else
-				ft_reverse_rotate(stack_a);
+				ft_reverse_rotate(stack_a, 'A');
 			positon = ft_search_min(stack_a);
 		}
-		ft_push(stack_a, stack_b);
+		ft_push(stack_a, stack_b, "AB");
 		list_size = ft_lstsize(*stack_a);
 	}
 	return ;
