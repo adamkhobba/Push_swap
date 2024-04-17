@@ -12,28 +12,30 @@
 
 #include "../include/push_swap.h"
 
-t_list *push_stack(t_list **lst, int n) {
-  t_list *node;
-  void *tmp;
+t_list	*push_stack(t_list **lst, int n)
+{
+	t_list	*node;
+	void	*tmp;
 
-  tmp = &n;
-  node = ft_lstnew(tmp);
-  ft_lstadd_front(lst, node);
-  return (node);
+	tmp = &n;
+	node = ft_lstnew(tmp);
+	ft_lstadd_front(lst, node);
+	return (node);
 }
 
-t_list *create_stack_a(char **s) {
-  int bottom;
-  t_list *stack_a;
-  void *tmp;
-  int index;
+t_list	*create_stack_a(char **s)
+{
+	int		bottom;
+	t_list	*stack_a;
+	void	*tmp;
+	int		index;
 
-  tmp = &bottom;
-  index = ft_count_strs(s);
-  bottom = ft_atoi(s[index - 1]);
-  stack_a = ft_lstnew(tmp);
-  index -= 2;
-  while (index >= 0)
-    stack_a = push_stack(&stack_a, ft_atoi(s[index--]));
-  return (stack_a);
+	tmp = &bottom;
+	index = ft_count_strs(s);
+	bottom = ft_atoi(s[index - 1]);
+	stack_a = ft_lstnew(tmp);
+	index -= 2;
+	while (index >= 0)
+		stack_a = push_stack(&stack_a, ft_atoi(s[index--]));
+	return (stack_a);
 }

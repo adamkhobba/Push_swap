@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 11:07:46 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/19 12:23:35 by akhobba          ###   ########.fr       */
+/*   Created: 2024/04/17 15:31:46 by akhobba           #+#    #+#             */
+/*   Updated: 2024/04/17 15:31:47 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	size;
+	size_t	i;
+	size_t	l;
 
-	size = 0;
-	while (lst)
+	i = 0;
+	l = ft_strlen(src);
+	if (size == 0)
+		return (l);
+	while (i < size - 1 && src[i])
 	{
-		lst = lst->next;
-		++size;
+		dst[i] = src[i];
+		i++;
 	}
-	return (size);
+	dst[i] = '\0';
+	return (l);
 }

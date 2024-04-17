@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   not_sorted.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 11:07:46 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/19 12:23:35 by akhobba          ###   ########.fr       */
+/*   Created: 2024/04/17 09:50:27 by akhobba           #+#    #+#             */
+/*   Updated: 2024/04/17 11:58:28 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_not_soted(char **s)
 {
-	int	size;
+	int i;
+	int check;
 
-	size = 0;
-	while (lst)
+	check = 1;
+	i = 0;
+	while (s[i] && s[i + 1])
 	{
-		lst = lst->next;
-		++size;
+		if ((ft_atoi(s[i]) < ft_atoi(s[i + 1])))
+			check++;
+		i++;
 	}
-	return (size);
+	if (check == ft_count_strs(s))
+		return (0);
+	return (1);
 }

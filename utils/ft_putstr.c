@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 11:07:46 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/19 12:23:35 by akhobba          ###   ########.fr       */
+/*   Created: 2024/04/17 11:35:06 by akhobba           #+#    #+#             */
+/*   Updated: 2024/04/17 11:57:12 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_putstr(char *s)
 {
-	int	size;
-
-	size = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		++size;
-	}
-	return (size);
+    write(2, s, ft_strlen(s));
 }
