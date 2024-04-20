@@ -92,10 +92,3 @@ char	**ft_split(char *s, char c)
 		return (NULL);
 	return (arr);
 }
-
-// int main() {
-//   char **s = ft_split("1 2 39 4 58 6 78 8 9 888", ' ');
-//   int i = 0;
-//   while (s[i])
-//     printf("%s ", s[i++]);
-// }

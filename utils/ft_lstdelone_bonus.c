@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 15:33:46 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/19 20:45:48 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/18 11:31:57 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst)
 {
-	if (!lst || !del)
+	if (!lst)
 		return ;
-	del(&lst->data);
 	free(lst);
 }

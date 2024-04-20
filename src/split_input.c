@@ -59,7 +59,7 @@ char	**split_input(int ac, char **av)
 	{
 		str = ft_split(av[i], ' ');
 		s = ft_strjoin_pro(s, str);
-		free(str);
+		ft_free(str,0 ,2);	
 		i++;
 	}
 	return (s);

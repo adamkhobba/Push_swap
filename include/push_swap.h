@@ -15,17 +15,22 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+// free
+void ft_free(char **s, int len, int option);
+
 // src
 t_list				*create_stack_a(char **av);
 t_list				*push_stack(t_list **lst, int n);
-int					ft_all_checks(char **s);
 int					ft_search_min(t_list **stack);
 char				**ft_split(char *str, char c);
 char				**split_input(int ac, char **av);
-int					ft_not_soted(char **s);
 // sort five
-
 void				ft_push_the_lowest(t_list **stack_a, t_list **stack_b);
+void				ft_sort_five(t_list **stack_a, t_list **stack_b);
+
+// parsing
+int					ft_not_soted(char **s);
+int					ft_all_checks(char **s);
 
 // move
 int					ft_push(t_list **from, t_list **to, char *s);
@@ -34,7 +39,6 @@ t_list				**ft_reverse_rotate(t_list **list, char c);
 int					ft_swap(t_list **lst, char c);
 
 // utils
-void				ft_sort_five(t_list **stack_a, t_list **stack_b);
 void	ft_putstr(char *s, int fd);
 int					ft_isdigit(int c);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -56,8 +60,8 @@ void				ft_lstadd_front(t_list **lst, t_list *ne);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *ne);
-void				ft_lstclear(t_list **lst, void (*del)(void *));
-void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst);
+void				ft_lstdelone(t_list *lst);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
