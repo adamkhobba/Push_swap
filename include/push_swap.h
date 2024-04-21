@@ -23,8 +23,9 @@ t_list				*create_stack_a(char **av);
 t_list				*push_stack(t_list **lst, int n);
 int					ft_search_min(t_list **stack);
 char				**ft_split(char *str, char c);
-char				**split_input(int ac, char **av);
-// sort five
+char **split_input(int ac, char **av);
+
+ // sort five
 void				ft_push_the_lowest(t_list **stack_a, t_list **stack_b);
 void				ft_sort_five(t_list **stack_a, t_list **stack_b);
 

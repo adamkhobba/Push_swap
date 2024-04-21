@@ -1,9 +1,9 @@
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-int	ft_count_strs(char **s)
+int ft_count_strs(char **s)
 {
-	int	counter;
+	int counter;
 
 	counter = 0;
 	if (!s)
@@ -15,11 +15,11 @@ int	ft_count_strs(char **s)
 	return (counter);
 }
 
-char	**ft_strjoin_pro(char **s1, char **s2)
+char **ft_strjoin_pro(char **s1, char **s2)
 {
-	char	**tmp;
-	int		i;
-	int		j;
+	char **tmp;
+	int i;
+	int j;
 
 	i = 0;
 	if (!s1 && !s2)
@@ -37,20 +37,19 @@ char	**ft_strjoin_pro(char **s1, char **s2)
 	j = 0;
 	while (s2[j])
 	{
-		tmp[i] = ft_strdup(s2[j]);
+		tmp[i] = ft_strdup(s2[j++]);
 		i++;
-		j++;
 	}
 	tmp[i] = NULL;
 	return (tmp);
 }
 
-char	**split_input(int ac, char **av)
+char **split_input(int ac, char **av)
 {
-	char	**str;
-	char	**s;
-	int		i;
-	int		j;
+	char **str;
+	char **s;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
@@ -59,7 +58,7 @@ char	**split_input(int ac, char **av)
 	{
 		str = ft_split(av[i], ' ');
 		s = ft_strjoin_pro(s, str);
-		ft_free(str,0 ,2);	
+		ft_free(str, 0, 2);
 		i++;
 	}
 	return (s);

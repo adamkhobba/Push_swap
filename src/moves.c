@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:36:38 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/20 10:53:03 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/20 15:40:51 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int ft_push(t_list **from, t_list **to, char *s)
 	tmp = (*from);
 	(*from) = (*from)->next;
 	push_stack(to, tmp->data);
-	if (ft_strncmp(s, "BA", 2))
+	if (!ft_strncmp(s, "BA", 2))
 		ft_putstr("pa\n", 1);
-	else if (ft_strncmp(s, "AB", 2))
+	else if (!ft_strncmp(s, "AB", 2))
 		ft_putstr("pb\n", 1);
 	free(tmp);
 	return (1);
