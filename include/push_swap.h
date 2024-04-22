@@ -42,7 +42,7 @@ int ft_swap(t_list **lst, char c);
 int ft_search_closet_smaller(t_list *stack, int needer);
 int ft_search_target(t_list *stack, int needer, char c);
 int ft_search_max(t_list *stack);
-
+int ft_neg1_case(t_list *stack);
 // utils ft
 void ft_putstr(char *s, int fd);
 int ft_isdigit(int c);
