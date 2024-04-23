@@ -7,9 +7,8 @@ int ft_count_strs(char **s) {
   counter = 0;
   if (!s)
     return (0);
-  while (s[counter]) {
+  while (s[counter])
     counter++;
-  }
   return (counter);
 }
 
@@ -24,7 +23,8 @@ char **ft_strjoin_pro(char **s1, char **s2) {
     return (ft_strdup_pro(s2));
   if (!s2)
     return (ft_strdup_pro(s1));
-  tmp = malloc(sizeof(char *) * (ft_count_strs(s1) + ft_count_strs(s2)) + 1);
+  tmp = (char **)malloc(sizeof(char *) *
+                        (ft_count_strs(s1) + ft_count_strs(s2) + 1));
   while (s1[i[0]]) {
     tmp[i[0]] = ft_strdup(s1[i[0]]);
     i[0]++;

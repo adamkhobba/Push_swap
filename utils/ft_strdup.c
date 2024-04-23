@@ -21,11 +21,13 @@ char *ft_strdup(const char *s) {
 char **ft_strdup_pro(char **s) {
   char **ptr;
   char **put;
+  int size;
   size_t i;
 
   i = 0;
   ptr = s;
-  put = (char **)malloc((sizeof(char *) * ft_count_strs(ptr)) + 1);
+  size = ft_count_strs(ptr);
+  put = malloc(sizeof(char *) * (size + 1));
   if (!put)
     return (0);
   while (ptr[i]) {
