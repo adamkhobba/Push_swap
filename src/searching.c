@@ -26,10 +26,7 @@ int ft_search_closet_bigger(t_list *stack, int needer) {
   t_list *tmp;
 
   pos_bigger = -1;
-  bigger = ft_init_searching(stack, needer, 'B');
-  if (bigger == -1)
-    if (!ft_neg1_case(stack))
-      return (pos_bigger);
+  bigger = INT_MAX;
   tmp = stack;
   while (stack) {
     if (stack->data > needer && stack->data <= bigger)
@@ -51,10 +48,7 @@ int ft_search_closet_smaller(t_list *stack, int needer) {
   t_list *tmp;
 
   pos_smaller = -1;
-  smaller = ft_init_searching(stack, needer, 'S');
-  if (smaller == -1)
-    if (!ft_neg1_case(stack))
-      return (pos_smaller);
+  smaller = INT_MIN;
   tmp = stack;
   while (stack) {
     if (stack->data < needer && stack->data >= smaller)
@@ -68,32 +62,6 @@ int ft_search_closet_smaller(t_list *stack, int needer) {
     tmp = tmp->next;
   }
   return (pos_smaller);
-}
-
-int ft_search_max(t_list *stack) {
-
-  int pos_max;
-  t_list *tmp;
-  int max;
-
-  tmp = stack;
-  pos_max = 0;
-  if (!stack)
-    return (-1);
-  max = tmp->data;
-  while (tmp) {
-    if (tmp->data > max)
-      max = tmp->data;
-    tmp = tmp->next;
-  }
-  tmp = stack;
-  while (tmp) {
-    if (max == tmp->data)
-      return (pos_max);
-    pos_max++;
-    tmp = tmp->next;
-  }
-  return (pos_max);
 }
 
 int ft_search_target(t_list *stack, int needer, char c) {

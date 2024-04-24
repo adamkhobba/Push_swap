@@ -37,12 +37,18 @@ int ft_push(t_list **from, t_list **to, char *s);
 t_list *ft_rotate(t_list **list, char c);
 t_list **ft_reverse_rotate(t_list **list, char c);
 int ft_swap(t_list **lst, char c);
-// searching ft
 
+// searching ft
 int ft_search_closet_smaller(t_list *stack, int needer);
+int ft_search_min_max(t_list *stack, char c);
 int ft_search_target(t_list *stack, int needer, char c);
 int ft_search_max(t_list *stack);
 int ft_neg1_case(t_list *stack);
+
+// turk algo
+void ft_find_cheapest(t_list **stack_a, t_list **stack_b, int len_stack);
+int ft_cost_return(int needer, t_list *stack_a, t_list *stack_b, int pos_node);
+
 // utils ft
 void ft_putstr(char *s, int fd);
 int ft_isdigit(int c);
