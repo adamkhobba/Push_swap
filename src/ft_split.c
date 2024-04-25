@@ -78,8 +78,8 @@ static int	ft_rspl(char **arr, char const *s, char c)
 
 char	**ft_split(char *s, char c)
 {
-	char	**arr;
-	size_t	size;
+	char **arr;
+	size_t size;
 
 	if (NULL == s)
 		return (NULL);

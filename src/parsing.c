@@ -76,22 +76,22 @@ int	ft_all_checks(char **s)
 {
 	if (!ft_check_num(s))
 	{
-    	ft_putstr("Error\n non number(s)", 2);
+		ft_putstr("Error\n non number(s)", 2);
 		return (0);
 	}
 	if (!ft_bigger_int(s))
 	{
-    	ft_putstr("Error 2\n bigger than max or !", 2);
+		ft_putstr("Error 2\n bigger than max or !", 2);
 		return (0);
 	}
 	if (!ft_dup_num(s))
 	{
-    	ft_putstr("Error 3\n duplicate number(s)", 2);
+		ft_putstr("Error 3\n duplicate number(s)", 2);
 		return (0);
 	}
 	if (!ft_not_soted(s))
 	{
-    	ft_putstr("Error 4\n sorted input", 2);
+		ft_putstr("Error 4\n sorted input", 2);
 		return (0);
 	}
 	return (1);

@@ -53,9 +53,11 @@ int ft_search_max(t_list *stack);
 int ft_neg1_case(t_list *stack);
 
 // turk algo
-void ft_find_cheapest(t_list **stack_a, t_list **stack_b, int len_stack);
+void ft_find_cheapest(t_list **stack_a, t_list **stack_b);
 int ft_cost_return(int needer, t_list *stack_a, t_list *stack_b, int pos_node);
 void ft_operation(t_list **stack_a, t_list **stack_b);
+void	ft_turk_algo(t_list **stack_a, t_list **stack_b);
+int ft_cal_mid(int len);
 
 // utils ft
 void ft_putstr(char *s, int fd);
