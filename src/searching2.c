@@ -25,7 +25,7 @@ int	ft_search_min(t_list *stack)
 			return (pos_min);
 		tmp = tmp->next;
 	}
-	return (pos_min);
+	return (-1);
 }
 
 int	ft_search_max(t_list *stack)
@@ -53,7 +53,7 @@ int	ft_search_max(t_list *stack)
 			return (pos_max);
 		tmp = tmp->next;
 	}
-	return (pos_max);
+	return (-1);
 }
 
 int	ft_search_min_max(t_list *stack, char c)

@@ -17,8 +17,8 @@ int	main(int ac, char **av)
 	t_list	*stack_a;
 	char	**s;
 	t_list	*top;
+	t_list	*stack_b;
 
-	t_list *stack_b;
 	stack_b = NULL;
 	stack_a = NULL;
 	s = NULL;
@@ -40,16 +40,17 @@ int	main(int ac, char **av)
 	ft_turk_algo(&stack_a, &stack_b);
 	printf("\nstack a after\n");
 	top = stack_a;
-	while (top) {
-	  printf("%d\n", top->data);
-	  top = top->next;
+	while (top)
+	{
+		printf("%d\n", top->data);
+		top = top->next;
 	}
-
 	printf("\nstack b after\n");
 	top = stack_b;
-	while (top) {
-	  printf("%d\n", top->data);
-	  top = top->next;
+	while (top)
+	{
+		printf("%d\n", top->data);
+		top = top->next;
 	}
 	ft_lstclear(&stack_a);
 	return (0);

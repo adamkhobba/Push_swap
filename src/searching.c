@@ -22,7 +22,7 @@ int	ft_search_closet_bigger(t_list *stack, int needer)
 			return (pos_bigger);
 		tmp = tmp->next;
 	}
-	return (pos_bigger);
+	return (-1);
 }
 
 int	ft_search_closet_smaller(t_list *stack, int needer)
@@ -47,7 +47,7 @@ int	ft_search_closet_smaller(t_list *stack, int needer)
 			return (pos_smaller);
 		tmp = tmp->next;
 	}
-	return (pos_smaller);
+	return (-1);
 }
 
 int	ft_search_target(t_list *stack, int needer, char c)
