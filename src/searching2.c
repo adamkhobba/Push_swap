@@ -1,21 +1,12 @@
 #include "../include/push_swap.h"
 
-int ft_neg1_case(t_list *stack) {
-  while (stack) {
-    if (stack->data == -1)
-      return (1);
-    stack = stack->next;
-  }
-  return (0);
-}
-
 int ft_search_min(t_list *stack) {
   t_list *tmp;
-  int counter;
+  int pos_min;
   int min;
 
   tmp = stack;
-  counter = 0;
+  pos_min = -1;
   if (!stack)
     return (-1);
   min = tmp->data;
@@ -26,12 +17,12 @@ int ft_search_min(t_list *stack) {
   }
   tmp = stack;
   while (tmp) {
+    pos_min++;
     if (min == tmp->data)
-      return (counter);
-    counter++;
+      return (pos_min);
     tmp = tmp->next;
   }
-  return (counter);
+  return (pos_min);
 }
 
 int ft_search_max(t_list *stack) {
@@ -41,7 +32,7 @@ int ft_search_max(t_list *stack) {
   int max;
 
   tmp = stack;
-  pos_max = 0;
+  pos_max = -1;
   if (!stack)
     return (-1);
   max = tmp->data;
@@ -52,9 +43,9 @@ int ft_search_max(t_list *stack) {
   }
   tmp = stack;
   while (tmp) {
+    pos_max++;
     if (max == tmp->data)
       return (pos_max);
-    pos_max++;
     tmp = tmp->next;
   }
   return (pos_max);

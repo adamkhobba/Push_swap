@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:36:38 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/20 15:40:51 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/25 08:58:51 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int ft_swap(t_list **lst, char c) {
   return (1);
 }
 
-t_list *ft_rotate(t_list **list, char c) {
+void ft_rotate(t_list **list, char c) {
   t_list *tmp;
   t_list *current;
 
@@ -71,7 +71,7 @@ t_list *ft_rotate(t_list **list, char c) {
   return (*list);
 }
 
-t_list **ft_reverse_rotate(t_list **list, char c) {
+void ft_reverse_rotate(t_list **list, char c) {
   t_list *tmp;
   t_list *current;
   t_list *var;

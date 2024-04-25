@@ -1,25 +1,5 @@
 #include "../include/push_swap.h"
 
-int ft_init_searching(t_list *stack, int needer, char option) {
-  int init_val;
-
-  init_val = -1;
-  if (option == 'S') {
-    while (stack) {
-      if (stack->data < needer)
-        return (stack->data);
-      stack = stack->next;
-    }
-  } else if (option == 'B') {
-    while (stack) {
-      if (stack->data > needer)
-        return (stack->data);
-      stack = stack->next;
-    }
-  }
-  return (init_val);
-}
-
 int ft_search_closet_bigger(t_list *stack, int needer) {
   int pos_bigger;
   int bigger;

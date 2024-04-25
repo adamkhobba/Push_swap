@@ -39,7 +39,7 @@ void ft_push_the_lowest(t_list **stack_a, t_list **stack_b) {
   while (list_size > 3) {
     positon = ft_search_min(*stack_a);
     while (positon != 0) {
-      if (positon == 2)
+      if (positon == 1)
         ft_swap(stack_a, 'A');
       else
         ft_reverse_rotate(stack_a, 'A');

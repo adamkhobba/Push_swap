@@ -36,13 +36,20 @@ int ft_cal_cost(int pos_target, int pos_node, int len1, int len2) {
   int mid_2;
 
   if (len1 % 2)
-    mid_1 = len1 / 2 + 1;
-  else
     mid_1 = len1 / 2;
-  if (len2 % 2)
-    mid_2 = len2 / 2 + 1;
   else
+    mid_1 = len1 / 2 - 1;
+  if (len2 % 2)
     mid_2 = len2 / 2;
+  else if (len2 > 2)
+    mid_2 = len2 / 2 - 1;
+  else
+    mid_2 = 2;
+  if ((pos_node < mid_1 && pos_target < mid_2)||
+  (pos_node >= mid_1 && pos_target >= mid_2))
+  cost = max(ft_find_one_const(len1, pos_node, mid_1),
+    ft_find_one_const(len2, pos_target, mid_2));
+  else 
   cost = ft_find_one_const(len1, pos_node, mid_1) +
          ft_find_one_const(len2, pos_target, mid_2);
   return (cost);
@@ -62,23 +69,27 @@ int ft_cost_return(int needer, t_list *stack_a, t_list *stack_b, int pos_node) {
   return (cost);
 }
 
-void ft_find_cheapest(t_list **stack_a, t_list **stack_b, int len_stack) {
+void ft_find_cheapest(t_list **stack_a, t_list **stack_b, int len_stack)
+{
   t_list *tmp;
-  int pos_node;
-  int pos_target;
   int cost;
 
   tmp = *stack_a;
-  pos_node = -1;
+  (*stack_a)->pos_node = -1;
   while (tmp) {
-    pos_node++;
-    pos_target = ft_search_target(*stack_b, tmp->data, 'S');
-    if (pos_target == -1)
-      pos_target = ft_search_min_max(*stack_b, 'M');
-    cost = ft_cal_cost(pos_target, pos_node, ft_lstsize(*stack_a),
+    if (ft_lstsize(*stack_a) <= 3)
+    {
+      ft_sort_three(stack_a);
+      return ;
+    }
+    (*stack_a)->pos_node++;
+    (*stack_a)->pos_target = ft_search_target(*stack_b, tmp->data, 'S');
+    if ((*stack_a)->pos_target == -1)
+      (*stack_a)->pos_target = ft_search_min_max(*stack_b, 'M');
+    cost = ft_cal_cost((*stack_a)->pos_target, (*stack_a)->pos_node, ft_lstsize(*stack_a),
                        ft_lstsize(*stack_b));
     if (ft_check_cheapest(cost, *stack_a, *stack_b))
-      ft_opteration(stack_a, stack_b, pos_node, pos_target);
+      ft_operation(stack_a, stack_b);
     tmp = tmp->next;
   }
 }

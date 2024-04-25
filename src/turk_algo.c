@@ -14,29 +14,12 @@ int ft_len_return(int len) {
     mid = len / 2;
   return (mid);
 }
-void ft_go_top(t_list **stackk, char c) {
-  int mid;
-  int len_a;
 
-  mid = ft_len_return(ft_lstsize(*stack_a));
-  len_a = ft_lstsize(*stack_a);
-  if (pos_node < mid) {
-    while (pos_node) {
-      ft_rotate(stack_a, 'A');
-      pos_node--;
-    }
-  } else {
-    while (pos_node < len_a) {
-      ft_reverse_rotate(stack_a, 'A');
-      pos_node++;
-      if (pos_node == len_a)
-        ft_reverse_rotate(stack_a, 'A');
-    }
-  }
+void ft_operation(t_list **stack_a, t_list **stack_b) {
+  int ;
+
+
 }
-
-void ft_operation(t_list **stack_a, t_list **stack_b, int pos_target,
-                  int pos_node) {}
 
 void ft_turk_algo(t_list **stack_a, t_list **stack_b) {
   int len_stack;

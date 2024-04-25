@@ -11,6 +11,8 @@
 
 typedef struct s_list {
   int data;
+  int pos_node;
+  int pos_target;
   struct s_list *next;
 } t_list;
 
@@ -27,15 +29,20 @@ char **split_input(int ac, char **av);
 // sort five ft
 void ft_push_the_lowest(t_list **stack_a, t_list **stack_b);
 void ft_sort_five(t_list **stack_a, t_list **stack_b);
+void ft_sort_three(t_list **stack);
 
 // parsing ft
 int ft_not_soted(char **s);
 int ft_all_checks(char **s);
+int	max(int a, int b);
 
 // move ft
+void  ft_swap_two(t_list **stack_a, t_list **stack_b);
+void ft_rotate_two(t_list **stack_a, t_list **stack_b);
+void ft_reverse_rotate_two(t_list **stack_a, t_list **stack_b);
 int ft_push(t_list **from, t_list **to, char *s);
-t_list *ft_rotate(t_list **list, char c);
-t_list **ft_reverse_rotate(t_list **list, char c);
+void ft_rotate(t_list **list, char c);
+void ft_reverse_rotate(t_list **list, char c);
 int ft_swap(t_list **lst, char c);
 
 // searching ft
@@ -48,6 +55,7 @@ int ft_neg1_case(t_list *stack);
 // turk algo
 void ft_find_cheapest(t_list **stack_a, t_list **stack_b, int len_stack);
 int ft_cost_return(int needer, t_list *stack_a, t_list *stack_b, int pos_node);
+void ft_operation(t_list **stack_a, t_list **stack_b);
 
 // utils ft
 void ft_putstr(char *s, int fd);
