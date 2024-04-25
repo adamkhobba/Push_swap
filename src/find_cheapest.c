@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:03:27 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/25 16:19:10 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/25 19:10:14 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,10 @@ void	ft_find_cheapest(t_list **stack_a, t_list **stack_b)
 
 	tmp = *stack_a;
 	(*stack_a)->pos_node = -1;
-	while (tmp)
+	while (1)
 	{
 		if (ft_lstsize(*stack_a) <= 3)
 		{
-			printf("------------------\n");
 			ft_sort_three(stack_a);
 			return ;
 		}
@@ -100,7 +99,10 @@ void	ft_find_cheapest(t_list **stack_a, t_list **stack_b)
 		cost = ft_cal_cost((*stack_a)->pos_target, (*stack_a)->pos_node,
 				ft_lstsize(*stack_a), ft_lstsize(*stack_b));
 		if (ft_check_cheapest(cost, *stack_a, *stack_b))
+		{
 			ft_operation(stack_a, stack_b, (*stack_a)->pos_node);
+			tmp = *stack_a;
+		}
 		tmp = tmp->next;
 	}
 }

@@ -36,11 +36,8 @@ void	ft_still_need_rr(t_list **stack_a, t_list **stack_b, int pos_node ,char con
 		{
 			ft_reverse_rotate(stack_a, 'A');
 			pos_node++;
-			if (pos_node >= ft_lstsize(*stack_a) - 1)
-			{
-				ft_reverse_rotate(stack_a, 'A');
+			if (pos_node >= ft_lstsize(*stack_a))
 				pos_node = 0;
-			}
 		}
 	}
 	if (option[1] == 'T')
@@ -50,10 +47,7 @@ void	ft_still_need_rr(t_list **stack_a, t_list **stack_b, int pos_node ,char con
 			ft_reverse_rotate(stack_b, 'B');
 			(*stack_a)->pos_target++;
 			if ((*stack_a)->pos_target >= ft_lstsize(*stack_b) - 1)
-			{
-				ft_reverse_rotate(stack_b, 'B');
 				(*stack_a)->pos_target = 0;
-			}
 		}
 	}
 }
@@ -113,7 +107,7 @@ void	ft_both_bottom_mid(t_list **stack_a, t_list **stack_b, int pos_node)
 	}
 }
 
-void	ft_operation(t_list **stack_a, t_list **stack_b, int pos_node)
+void	ft_operation(t_list **stack_a, t_list **stack_b, int pos_node, char option)
 {
 	int	mid;
 	int	mid2;
@@ -121,13 +115,9 @@ void	ft_operation(t_list **stack_a, t_list **stack_b, int pos_node)
 	mid = ft_cal_mid(ft_lstsize(*stack_a));
 	mid2 = ft_cal_mid(ft_lstsize(*stack_b));
 	if (pos_node < mid && (*stack_a)->pos_target < mid2)
-	{
 		ft_both_top_mid(stack_a, stack_b, pos_node);
-	}
 	else if (pos_node >= mid && (*stack_a)->pos_target >= mid2)
-	{
 		ft_both_bottom_mid(stack_a, stack_b, pos_node);
-	}
 	else
 	{
 		if (pos_node < mid)
@@ -139,8 +129,12 @@ void	ft_operation(t_list **stack_a, t_list **stack_b, int pos_node)
 		else if ((*stack_a)->pos_target >= mid)
 			ft_still_need_rr(stack_a, stack_b, pos_node, "T");
 	}
-	ft_push(stack_a, stack_b, "AB");
+	if (option == 'A')
+		ft_push(stack_a, stack_b, "AB");
+	else if (option == 'B')
+		ft_push(stack_b, stack_a, "BA");
 }
+
 void	ft_turk_algo(t_list **stack_a, t_list **stack_b)
 {
 	int	len_stack;
@@ -155,7 +149,6 @@ void	ft_turk_algo(t_list **stack_a, t_list **stack_b)
 	{
 		ft_push(stack_a, stack_b, "AB");
 		ft_push(stack_a, stack_b, "AB");
-		printf("------------------------------------\n");
 		ft_find_cheapest(stack_a, stack_b);
 	}
 }
