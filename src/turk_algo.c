@@ -149,7 +149,7 @@ void	ft_turk_algo(t_list **stack_a, t_list **stack_b)
 	{
 		ft_push(stack_a, stack_b, "AB");
 		ft_push(stack_a, stack_b, "AB");
-		ft_find_cheapest(stack_a, stack_b);
-		ft_turk_back(stack_a, stack_b);
+		ft_turk_push_b(stack_a, stack_b);
+		// ft_turk_back(stack_a, stack_b);
 	}
 }

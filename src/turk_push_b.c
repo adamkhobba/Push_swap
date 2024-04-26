@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:03:27 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/25 19:23:49 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/26 08:27:46 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	ft_cost_return(int needer, t_list *stack_a, t_list *stack_b, int pos_node)
 	return (cost);
 }
 
-void	ft_find_cheapest(t_list **stack_a, t_list **stack_b)
+void	ft_turk_push_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 	int		cost;
