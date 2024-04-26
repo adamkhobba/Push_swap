@@ -28,47 +28,6 @@ int	ft_cal_mid(int len)
 	return (mid);
 }
 
-void	ft_still_need_rr(t_list **stack_a, t_list **stack_b, t_pos *pos,
-		char const *option)
-{
-	if (option[0] == 'N')
-	{
-		while (pos->node < ft_lstsize(*stack_a))
-		{
-			ft_reverse_rotate(stack_a, 'A');
-			pos->node++;
-		}
-	}
-	if (option[1] == 'T')
-	{
-		while (pos->target < ft_lstsize(*stack_b))
-		{
-			ft_reverse_rotate(stack_b, 'B');
-			pos->target++;
-		}
-	}
-}
-
-void	ft_still_need_r(t_list **stack_a, t_list **stack_b, t_pos *pos,
-		const char *option)
-{
-	if (option[0] == 'N')
-	{
-		while (pos->node)
-		{
-			ft_rotate(stack_a, 'A');
-			pos->node--;
-		}
-	}
-	if (option[1] == 'T')
-	{
-		while (pos->target)
-		{
-			ft_rotate(stack_b, 'B');
-			pos->target--;
-		}
-	}
-}
 
 void	ft_both_top_mid(t_list **stack_a, t_list **stack_b, t_pos *pos)
 {
@@ -154,5 +113,6 @@ void	ft_turk_algo(t_list **stack_a, t_list **stack_b)
 		ft_push(stack_a, stack_b, "AB");
 		ft_turk_push_b(stack_a, stack_b);
 		ft_turk_back(stack_a, stack_b);
+		ft_put_min_top(stack_a);
 	}
 }

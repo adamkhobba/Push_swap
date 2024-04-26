@@ -6,11 +6,77 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:17:28 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/26 16:59:57 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/26 18:28:38 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	ft_still_need_rr(t_list **stack_a, t_list **stack_b, t_pos *pos,
+		char const *option)
+{
+	if (option[0] == 'N')
+	{
+		while (pos->node < ft_lstsize(*stack_a))
+		{
+			ft_reverse_rotate(stack_a, 'A');
+			pos->node++;
+		}
+	}
+	if (option[1] == 'T')
+	{
+		while (pos->target < ft_lstsize(*stack_b))
+		{
+			ft_reverse_rotate(stack_b, 'B');
+			pos->target++;
+		}
+	}
+}
+
+void	ft_still_need_r(t_list **stack_a, t_list **stack_b, t_pos *pos,
+		const char *option)
+{
+	if (option[0] == 'N')
+	{
+		while (pos->node)
+		{
+			ft_rotate(stack_a, 'A');
+			pos->node--;
+		}
+	}
+	if (option[1] == 'T')
+	{
+		while (pos->target)
+		{
+			ft_rotate(stack_b, 'B');
+			pos->target--;
+		}
+	}
+}
+
+void ft_put_min_top(t_list **stack_a)
+{
+	int pos_min;
+	int mid;
+
+	mid = ft_cal_mid(ft_lstsize(*stack_a));
+	pos_min = ft_search_min_max(*stack_a, 'm');
+	if (pos_min)
+	{
+		if (pos_min < mid)
+			while(pos_min)
+			{
+				ft_rotate(stack_a, 'A');
+				pos_min--;
+			}
+		else
+			while(pos_min < ft_lstsize(*stack_a))
+			{
+				ft_reverse_rotate(stack_a, 'A');
+				pos_min++;
+			}
+	}
+}
 
 void	ft_turk_back(t_list **stack_a, t_list **stack_b)
 {
@@ -20,13 +86,13 @@ void	ft_turk_back(t_list **stack_a, t_list **stack_b)
 
 	pos = &ppos;
 	tmp = *stack_b;
+	pos->target = 0;
 	while (tmp)
 	{
-		pos->target = ft_search_target(*stack_a, tmp->data, 'B');
-		if (pos->target == -1)
-			pos->target = ft_search_min_max(*stack_a, 'm');
-		ft_operation(stack_a, stack_b, 0, 'B');
-		printf("target = %d\n", pos->target);
+		pos->node = ft_search_target(*stack_a, tmp->data, 'B');
+		if (pos->node== -1)
+			pos->node = ft_search_min_max(*stack_a, 'm');
+		ft_operation(stack_a, stack_b, pos, 'B');
 		tmp = tmp->next;
 	}
 }

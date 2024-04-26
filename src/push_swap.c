@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:37:09 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/26 15:20:46 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/26 18:04:42 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,26 @@ int	main(int ac, char **av)
 	ft_free(s, 0, 2);
 	top = stack_a;
 	stack_a = top;
-	printf("\nstack a\n");
-	while (top)
-	{
-		printf("%d\n", top->data);
-		top = top->next;
-	}
+	// printf("\nstack a\n");
+	// while (top)
+	// {
+	// 	printf("%d\n", top->data);
+	// 	top = top->next;
+	// }
 	ft_turk_algo(&stack_a, &stack_b);
-	top = stack_a;
-	while (top)
-	{
-		printf("%d\n", top->data);
-		top = top->next;
-	}
-	printf("\nstack b after\n");
-	top = stack_b;
-	while (top)
-	{
-		printf("%d\n", top->data);
-		top = top->next;
-	}
+	// top = stack_a;
+	// while (top)
+	// {
+	// 	printf("%d\n", top->data);
+	// 	top = top->next;
+	// }
+	// printf("\nstack b after\n");
+	// top = stack_b;
+	// while (top)
+	// {
+	// 	printf("%d\n", top->data);
+	// 	top = top->next;
+	// }
 	ft_lstclear(&stack_a);
 	return (0);
 }
