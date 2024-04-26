@@ -92,8 +92,8 @@ void	ft_turk_push_b(t_list **stack_a, t_list **stack_b)
 			ft_sort_three(stack_a);
 			return ;
 		}
-			printf("check\n");
-			sleep(1);
+		printf("check\n");
+		sleep(1);
 		(*stack_a)->pos_node++;
 		(*stack_a)->pos_target = ft_search_target(*stack_b, tmp->data, 'S');
 		if ((*stack_a)->pos_target == -1)

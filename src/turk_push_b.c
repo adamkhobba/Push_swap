@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:03:27 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/26 10:03:06 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/26 11:04:37 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	ft_check_cheapest(int cost, t_list *stack_a, t_list *stack_b)
 	{
 		pos_node++;
 		curr_cost = ft_cost_return(tmp->data, stack_a, stack_b, pos_node);
-		printf("curr_cost =%d\n", curr_cost);
 		if (cost > curr_cost)
 			checker = 0;
 		tmp = tmp->next;
@@ -99,7 +98,6 @@ void	ft_turk_push_b(t_list **stack_a, t_list **stack_b)
 			(*stack_a)->pos_target = ft_search_min_max(*stack_b, 'M');
 		cost = ft_cal_cost((*stack_a)->pos_target, (*stack_a)->pos_node,
 				ft_lstsize(*stack_a), ft_lstsize(*stack_b));
-		printf("tm->data =%d node =%d target=%d cost =%d\n", tmp->data, (*stack_a)->pos_node, (*stack_a)->pos_target, cost);
 		tmp = tmp->next;
 		if (ft_check_cheapest(cost, *stack_a, *stack_b))
 		{
