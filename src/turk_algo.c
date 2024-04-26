@@ -28,102 +28,88 @@ int	ft_cal_mid(int len)
 	return (mid);
 }
 
-void	ft_still_need_rr(t_list **stack_a, t_list **stack_b, int pos_node,
+void	ft_still_need_rr(t_list **stack_a, t_list **stack_b, t_pos *pos,
 		char const *option)
 {
-  int pos_target;
-
-  pos_target = (*stack_a)->pos_target;
 	if (option[0] == 'N')
 	{
-		while (pos_node < ft_lstsize(*stack_a))
+		while (pos->node < ft_lstsize(*stack_a))
 		{
 			ft_reverse_rotate(stack_a, 'A');
-			pos_node++;
+			pos->node++;
 		}
 	}
 	if (option[1] == 'T')
 	{
-		while (pos_target < ft_lstsize(*stack_b))
+		while (pos->target < ft_lstsize(*stack_b))
 		{
 			ft_reverse_rotate(stack_b, 'B');
-			pos_target++;
+			pos->target++;
 		}
 	}
 }
 
-void	ft_still_need_r(t_list **stack_a, t_list **stack_b, int pos_node,
+void	ft_still_need_r(t_list **stack_a, t_list **stack_b, t_pos *pos,
 		const char *option)
 {
-  int pos_target;
-
-  pos_target = (*stack_a)->pos_target;
 	if (option[0] == 'N')
 	{
-		while (pos_node)
+		while (pos->node)
 		{
 			ft_rotate(stack_a, 'A');
-			pos_node--;
+			pos->node--;
 		}
 	}
 	if (option[1] == 'T')
 	{
-		while (pos_target)
+		while (pos->target)
 		{
 			ft_rotate(stack_b, 'B');
-			pos_target--;
+			pos->target--;
 		}
 	}
 }
 
-void	ft_both_top_mid(t_list **stack_a, t_list **stack_b, int pos_node)
+void	ft_both_top_mid(t_list **stack_a, t_list **stack_b, t_pos *pos)
 {
-  int pos_target;
-
-  pos_target = (*stack_a)->pos_target;
-	while (pos_node || pos_target)
+	while (pos->node || pos->target)
 	{
-		if (pos_node && pos_target)
+		if (pos->node && pos->target)
 		{
 			ft_rotate_two(stack_a, stack_b);
-			pos_node--;
-			pos_target--;
+			pos->node--;
+			pos->target--;
 		}
-		if (!pos_node || !pos_target)
+		if (!pos->node || !pos->target)
 		{
-			ft_still_need_r(stack_a, stack_b, pos_node, "NT");
+			ft_still_need_r(stack_a, stack_b, pos, "NT");
 			break ;
 		}
 	}
 }
 
-void	ft_both_bottom_mid(t_list **stack_a, t_list **stack_b, int pos_node)
+void	ft_both_bottom_mid(t_list **stack_a, t_list **stack_b, t_pos *pos)
 {
-  int pos_target;
-
-  pos_target = (*stack_a)->pos_target;
-	while (pos_node < ft_lstsize(*stack_a)
-		|| pos_target < ft_lstsize(*stack_b))
+	while (pos->node < ft_lstsize(*stack_a)
+		|| pos->target < ft_lstsize(*stack_b))
 	{
-		printf("tagert =%d\n", pos_target);
-		if (pos_node < ft_lstsize(*stack_a)
-			&& pos_target < ft_lstsize(*stack_b))
+		if (pos->node < ft_lstsize(*stack_a)
+			&& pos->target < ft_lstsize(*stack_b))
 		{
-      ft_reverse_rotate_two(stack_a, stack_b);
-			pos_node++;
-			pos_target++;
+			ft_reverse_rotate_two(stack_a, stack_b);
+			pos->node++;
+			pos->target++;
 		}
-		printf("tagert =%d\n", pos_target);
-		if (pos_node >= ft_lstsize(*stack_a)
-			|| pos_target >= ft_lstsize(*stack_b))
+		if (pos->node >= ft_lstsize(*stack_a)
+			|| pos->target >= ft_lstsize(*stack_b))
 		{
-			ft_still_need_rr(stack_a, stack_b, pos_node, "NT");
+			ft_still_need_rr(stack_a, stack_b, pos, "NT");
 			break ;
 		}
 	}
 }
 
-void	ft_operation(t_list **stack_a, t_list **stack_b, int pos_node,
+void	ft_operation(t_list **stack_a, t_list **stack_b, t_pos *pos,
 		char option)
 {
 	int	mid;
@@ -131,20 +117,20 @@ void	ft_operation(t_list **stack_a, t_list **stack_b, int pos_node,
 
 	mid = ft_cal_mid(ft_lstsize(*stack_a));
 	mid2 = ft_cal_mid(ft_lstsize(*stack_b));
-	if (pos_node < mid && (*stack_a)->pos_target < mid2)
-		ft_both_top_mid(stack_a, stack_b, pos_node);
-	else if (pos_node >= mid && (*stack_a)->pos_target >= mid2)
-		ft_both_bottom_mid(stack_a, stack_b, pos_node);
+	if (pos->node < mid && pos->target < mid2)
+		ft_both_top_mid(stack_a, stack_b, pos);
+	else if (pos->node >= mid && pos->target >= mid2)
+		ft_both_bottom_mid(stack_a, stack_b, pos);
 	else
 	{
-		if (pos_node < mid)
-			ft_still_need_r(stack_a, stack_b, pos_node, "N");
-		else if (pos_node >= mid)
-			ft_still_need_rr(stack_a, stack_b, pos_node, "N");
-		if ((*stack_a)->pos_target < mid)
-			ft_still_need_r(stack_a, stack_b, pos_node, "IT");
-		else if ((*stack_a)->pos_target >= mid)
-			ft_still_need_rr(stack_a, stack_b, pos_node, "IT");
+		if (pos->node < mid)
+			ft_still_need_r(stack_a, stack_b, pos, "N");
+		else if (pos->node >= mid)
+			ft_still_need_rr(stack_a, stack_b, pos, "N");
+		if (pos->target < mid)
+			ft_still_need_r(stack_a, stack_b, pos, "IT");
+		else if (pos->target >= mid)
+			ft_still_need_rr(stack_a, stack_b, pos, "IT");
 	}
 	if (option == 'A')
 		ft_push(stack_a, stack_b, "AB");
@@ -167,6 +153,6 @@ void	ft_turk_algo(t_list **stack_a, t_list **stack_b)
 		ft_push(stack_a, stack_b, "AB");
 		ft_push(stack_a, stack_b, "AB");
 		ft_turk_push_b(stack_a, stack_b);
-		// ft_turk_back(stack_a, stack_b);
+		ft_turk_back(stack_a, stack_b);
 	}
 }

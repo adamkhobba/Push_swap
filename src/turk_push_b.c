@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:03:27 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/26 16:20:41 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/26 16:49:54 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ int	ft_cal_cost(int pos_target, int node, int len1, int len2)
 
 	mid_1 = ft_cal_mid(len1);
 	mid_2 = ft_cal_mid(len2);
-	if ((node < mid_1 && pos_target < mid_2) || (pos_node >= mid_1
+	if ((node < mid_1 && pos_target < mid_2) || (node >= mid_1
 			&& pos_target >= mid_2))
-		cost = max(ft_find_one_const(len1, node, mid_1),
-				ft_find_one_const(len2, pos_target, mid_2));
+		cost = max(ft_find_one_const(len1, node, mid_1), ft_find_one_const(len2,
+					pos_target, mid_2));
 	else
-		cost = ft_find_one_const(len1, node, mid_1)
-			+ ft_find_one_const(len2, pos_target, mid_2);
+		cost = ft_find_one_const(len1, node, mid_1) + ft_find_one_const(len2,
+				pos_target, mid_2);
 	return (cost);
 }
 
@@ -82,8 +82,8 @@ void	ft_turk_push_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 	int		cost;
-	t_pos 	s_pos;
-	t_pos 	*pos;
+	t_pos	s_pos;
+	t_pos	*pos;
 
 	pos = &s_pos;
 	tmp = *stack_a;
@@ -99,8 +99,8 @@ void	ft_turk_push_b(t_list **stack_a, t_list **stack_b)
 		pos->target = ft_search_target(*stack_b, tmp->data, 'S');
 		if (pos->target == -1)
 			pos->target = ft_search_min_max(*stack_b, 'M');
-		cost = ft_cal_cost(pos->target, pos->node,
-				ft_lstsize(*stack_a), ft_lstsize(*stack_b));
+		cost = ft_cal_cost(pos->target, pos->node, ft_lstsize(*stack_a),
+				ft_lstsize(*stack_b));
 		tmp = tmp->next;
 		if (ft_check_cheapest(cost, *stack_a, *stack_b))
 		{
