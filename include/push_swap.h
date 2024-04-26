@@ -11,10 +11,13 @@
 
 typedef struct s_list {
   int data;
-  int pos_node;
-  int pos_target;
   struct s_list *next;
 } t_list;
+
+typedef struct s_pos {
+  int node;
+  int target;
+} t_pos;
 
 // free ft
 void ft_free(char **s, int len, int option);
