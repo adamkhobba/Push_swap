@@ -46,7 +46,7 @@ void	ft_still_need_rr(t_list **stack_a, t_list **stack_b, int pos_node ,char con
 		{
 			ft_reverse_rotate(stack_b, 'B');
 			(*stack_a)->pos_target++;
-			if ((*stack_a)->pos_target >= ft_lstsize(*stack_b) - 1)
+			if ((*stack_a)->pos_target >= ft_lstsize(*stack_b))
 				(*stack_a)->pos_target = 0;
 		}
 	}
@@ -97,10 +97,9 @@ void	ft_both_bottom_mid(t_list **stack_a, t_list **stack_b, int pos_node)
 		ft_reverse_rotate_two(stack_a, stack_b);
 		pos_node++;
 		(*stack_a)->pos_target++;
-		if (pos_node >= ft_lstsize(*stack_a) - 1
-			|| (*stack_a)->pos_target >= ft_lstsize(*stack_b) - 1)
+		if (pos_node >= ft_lstsize(*stack_a)
+			|| (*stack_a)->pos_target >= ft_lstsize(*stack_b))
 		{
-			ft_reverse_rotate_two(stack_a, stack_b);
 			ft_still_need_rr(stack_a, stack_b, pos_node, "NT");
 			break ;
 		}
@@ -117,7 +116,10 @@ void	ft_operation(t_list **stack_a, t_list **stack_b, int pos_node, char option)
 	if (pos_node < mid && (*stack_a)->pos_target < mid2)
 		ft_both_top_mid(stack_a, stack_b, pos_node);
 	else if (pos_node >= mid && (*stack_a)->pos_target >= mid2)
+	{
+		printf("node =%d, target =%d\n", pos_node, (*stack_b)->pos_target);
 		ft_both_bottom_mid(stack_a, stack_b, pos_node);
+	}
 	else
 	{
 		if (pos_node < mid)
@@ -125,9 +127,9 @@ void	ft_operation(t_list **stack_a, t_list **stack_b, int pos_node, char option)
 		else if (pos_node >= mid)
 			ft_still_need_rr(stack_a, stack_b, pos_node, "N");
 		if ((*stack_a)->pos_target < mid)
-			ft_still_need_r(stack_a, stack_b, pos_node, "T");
+			ft_still_need_r(stack_a, stack_b, pos_node, "IT");
 		else if ((*stack_a)->pos_target >= mid)
-			ft_still_need_rr(stack_a, stack_b, pos_node, "T");
+			ft_still_need_rr(stack_a, stack_b, pos_node, "IT");
 	}
 	if (option == 'A')
 		ft_push(stack_a, stack_b, "AB");
