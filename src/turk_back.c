@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:17:28 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/26 18:28:38 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/27 07:36:00 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	ft_turk_back(t_list **stack_a, t_list **stack_b)
 		if (pos->node== -1)
 			pos->node = ft_search_min_max(*stack_a, 'm');
 		ft_operation(stack_a, stack_b, pos, 'B');
-		tmp = tmp->next;
+		// tmp = tmp->next;
+		tmp = *stack_b;
 	}
 }
