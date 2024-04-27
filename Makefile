@@ -6,7 +6,7 @@
 #    By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 15:37:22 by akhobba           #+#    #+#              #
-#    Updated: 2024/04/26 08:33:35 by akhobba          ###   ########.fr        #
+#    Updated: 2024/04/27 15:41:52 by akhobba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ NAME = push_swap
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(OBJ) -o $(NAME) #-fsanitize=address
+	$(CC) $(OBJ) -o $(NAME) -fsanitize=address
 
 
 clean :

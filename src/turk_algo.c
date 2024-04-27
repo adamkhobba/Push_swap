@@ -30,7 +30,7 @@ int	ft_cal_mid(int len)
 
 void	ft_both_top_mid(t_list **stack_a, t_list **stack_b, t_pos *pos)
 {
-	while (pos->node || pos->target)
+	while (pos->node&& pos->target)
 	{
 		if (pos->node && pos->target)
 		{
@@ -51,20 +51,14 @@ void	ft_both_bottom_mid(t_list **stack_a, t_list **stack_b, t_pos *pos)
 	while ((pos->node < ft_lstsize(*stack_a)
 			|| pos->target < ft_lstsize(*stack_b)))
 	{
-		if (pos->node < ft_lstsize(*stack_a)
-			&& pos->target < ft_lstsize(*stack_b))
-		{
+		
 			ft_reverse_rotate_two(stack_a, stack_b);
 			pos->node++;
 			pos->target++;
 		}
 		if (pos->node >= ft_lstsize(*stack_a)
 			|| pos->target >= ft_lstsize(*stack_b))
-		{
 			ft_still_need_rr(stack_a, stack_b, pos, "NT");
-			break ;
-		}
-	}
 }
 
 void	ft_operation(t_list **stack_a, t_list **stack_b, t_pos *pos,
