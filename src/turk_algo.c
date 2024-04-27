@@ -23,7 +23,7 @@ int	ft_cal_mid(int len)
 		if (len > 2)
 			mid = len / 2 - 1;
 		else
-			mid = 2;
+			mid = len - 1;
 	}
 	return (mid);
 }
@@ -52,6 +52,7 @@ void	ft_both_bottom_mid(t_list **stack_a, t_list **stack_b, t_pos *pos)
 	while (pos->node < ft_lstsize(*stack_a)
 		|| pos->target < ft_lstsize(*stack_b))
 	{
+		printf("c-heck\n");
 		if (pos->node < ft_lstsize(*stack_a)
 			&& pos->target < ft_lstsize(*stack_b))
 		{
@@ -79,7 +80,9 @@ void	ft_operation(t_list **stack_a, t_list **stack_b, t_pos *pos,
 	if (pos->node < mid && pos->target < mid2)
 		ft_both_top_mid(stack_a, stack_b, pos);
 	else if (pos->node >= mid && pos->target >= mid2)
+	{
 		ft_both_bottom_mid(stack_a, stack_b, pos);
+	}
 	else
 	{
 		if (pos->node < mid)

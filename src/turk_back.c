@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:17:28 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/27 09:17:04 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/27 10:44:02 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,21 +83,18 @@ void	ft_turk_back(t_list **stack_a, t_list **stack_b)
 	t_list *tmp;
 	t_pos ppos;
 	t_pos *pos;
-	int i;
 
-	i = 0;
 	pos = &ppos;
 	tmp = *stack_b;
-	i  = ft_lstsize(*stack_b);
 	pos->target = 0;
-	while (i > 0)
+	pos->node = 0;
+	while (tmp)
 	{
-		printf("i=%d\n", i);
 		pos->node = ft_search_target(*stack_a, tmp->data, 'B');
 		if (pos->node== -1)
 			pos->node = ft_search_min_max(*stack_a, 'm');
+		printf("target =%d\n", pos->node);
 		ft_operation(stack_a, stack_b, pos, 'B');
 		tmp = *stack_b;
-		i--;
 	}
 }
