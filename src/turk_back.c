@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:17:28 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/27 10:44:02 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/27 12:15:34 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,23 +54,23 @@ void	ft_still_need_r(t_list **stack_a, t_list **stack_b, t_pos *pos,
 	}
 }
 
-void ft_put_min_top(t_list **stack_a)
+void	ft_put_min_top(t_list **stack_a)
 {
-	int pos_min;
-	int mid;
+	int	pos_min;
+	int	mid;
 
 	mid = ft_cal_mid(ft_lstsize(*stack_a));
 	pos_min = ft_search_min_max(*stack_a, 'm');
 	if (pos_min)
 	{
 		if (pos_min < mid)
-			while(pos_min)
+			while (pos_min)
 			{
 				ft_rotate(stack_a, 'A');
 				pos_min--;
 			}
 		else
-			while(pos_min < ft_lstsize(*stack_a))
+			while (pos_min < ft_lstsize(*stack_a))
 			{
 				ft_reverse_rotate(stack_a, 'A');
 				pos_min++;
@@ -80,9 +80,9 @@ void ft_put_min_top(t_list **stack_a)
 
 void	ft_turk_back(t_list **stack_a, t_list **stack_b)
 {
-	t_list *tmp;
-	t_pos ppos;
-	t_pos *pos;
+	t_list	*tmp;
+	t_pos	ppos;
+	t_pos	*pos;
 
 	pos = &ppos;
 	tmp = *stack_b;
@@ -91,9 +91,8 @@ void	ft_turk_back(t_list **stack_a, t_list **stack_b)
 	while (tmp)
 	{
 		pos->node = ft_search_target(*stack_a, tmp->data, 'B');
-		if (pos->node== -1)
+		if (pos->node == -1)
 			pos->node = ft_search_min_max(*stack_a, 'm');
-		printf("target =%d\n", pos->node);
 		ft_operation(stack_a, stack_b, pos, 'B');
 		tmp = *stack_b;
 	}

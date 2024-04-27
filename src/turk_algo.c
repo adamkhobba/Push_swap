@@ -28,7 +28,6 @@ int	ft_cal_mid(int len)
 	return (mid);
 }
 
-
 void	ft_both_top_mid(t_list **stack_a, t_list **stack_b, t_pos *pos)
 {
 	while (pos->node || pos->target)
@@ -49,10 +48,9 @@ void	ft_both_top_mid(t_list **stack_a, t_list **stack_b, t_pos *pos)
 
 void	ft_both_bottom_mid(t_list **stack_a, t_list **stack_b, t_pos *pos)
 {
-	while (pos->node < ft_lstsize(*stack_a)
-		|| pos->target < ft_lstsize(*stack_b))
+	while ((pos->node < ft_lstsize(*stack_a)
+			|| pos->target < ft_lstsize(*stack_b)))
 	{
-		printf("c-heck\n");
 		if (pos->node < ft_lstsize(*stack_a)
 			&& pos->target < ft_lstsize(*stack_b))
 		{
@@ -81,7 +79,10 @@ void	ft_operation(t_list **stack_a, t_list **stack_b, t_pos *pos,
 		ft_both_top_mid(stack_a, stack_b, pos);
 	else if (pos->node >= mid && pos->target >= mid2)
 	{
-		ft_both_bottom_mid(stack_a, stack_b, pos);
+		if (mid2 == 0)
+			ft_still_need_rr(stack_a, stack_b, pos, "N");
+		else
+			ft_both_bottom_mid(stack_a, stack_b, pos);
 	}
 	else
 	{
@@ -116,6 +117,6 @@ void	ft_turk_algo(t_list **stack_a, t_list **stack_b)
 		ft_push(stack_a, stack_b, "AB");
 		ft_turk_push_b(stack_a, stack_b);
 		ft_turk_back(stack_a, stack_b);
-		// ft_put_min_top(stack_a);
+		ft_put_min_top(stack_a);
 	}
 }
