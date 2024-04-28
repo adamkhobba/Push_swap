@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:37:09 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/28 09:42:27 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/28 11:13:37 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,14 @@ int main(int ac, char **av) {
   top = stack_a;
   stack_a = top;
   ft_turk_algo(&stack_a, &stack_b);
+  // printf("stack_a-----------\n");
   // top = stack_a;
+  // while (top) {
+  //   printf("%d\n", top->data);
+  //   top = top->next;
+  // }
+  // printf("stack_b-----------\n");
+  // top = stack_b;
   // while (top) {
   //   printf("%d\n", top->data);
   //   top = top->next;

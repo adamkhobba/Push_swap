@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:03:17 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/28 09:13:42 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/28 11:13:05 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,12 @@ int ft_cal_mid(int len) {
 
 void ft_both_top_mid(t_list **stack_a, t_list **stack_b, t_pos *pos) {
   while (pos->node && pos->target) {
-    if (pos->node && pos->target) {
       ft_rotate_two(stack_a, stack_b);
       pos->node--;
       pos->target--;
     }
-    if (!pos->node || !pos->target) {
+	if (!pos->node || !pos->target)
       ft_still_need_r(stack_a, stack_b, pos, "NT");
-      break;
-    }
-  }
 }
 
 void ft_both_bottom_mid(t_list **stack_a, t_list **stack_b, t_pos *pos) {
@@ -59,12 +55,14 @@ void ft_operation(t_list **stack_a, t_list **stack_b, t_pos *pos, char option) {
   mid = ft_cal_mid(ft_lstsize(*stack_a));
   mid2 = ft_cal_mid(ft_lstsize(*stack_b));
   if (pos->node < mid && pos->target < mid2)
-    ft_both_top_mid(stack_a, stack_b, pos); else if (pos->node >= mid && pos->target >= mid2) {
+    ft_both_top_mid(stack_a, stack_b, pos);
+else if (pos->node >= mid && pos->target >= mid2) {
     if (mid2 == 0)
       ft_still_need_rr(stack_a, stack_b, pos, "N");
     else
       ft_both_bottom_mid(stack_a, stack_b, pos);
-  } else {
+  }
+  else {
     if (pos->node < mid)
       ft_still_need_r(stack_a, stack_b, pos, "N");
     else if (pos->node >= mid)

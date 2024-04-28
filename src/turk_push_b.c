@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:03:27 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/27 15:45:51 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/28 11:02:09 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ int ft_cost_return(int needer, t_list *stack_a, t_list *stack_b, int node) {
   return (cost);
 }
 
-void ft_turk_push_b(t_list **stack_a, t_list **stack_b) {
+void ft_turk_push_b(t_list **stack_a, t_list **stack_b)
+{
   t_list *tmp;
   int cost;
   t_pos s_pos;
@@ -83,7 +84,8 @@ void ft_turk_push_b(t_list **stack_a, t_list **stack_b) {
   tmp = *stack_a;
   pos->node = -1;
   while (1) {
-    if (ft_lstsize(*stack_a) <= 3) {
+    if (ft_lstsize(*stack_a) <= 3)
+    {
       ft_sort_three(stack_a);
       return;
     }
@@ -94,10 +96,12 @@ void ft_turk_push_b(t_list **stack_a, t_list **stack_b) {
     cost = ft_cal_cost(pos->target, pos->node, ft_lstsize(*stack_a),
                        ft_lstsize(*stack_b));
     tmp = tmp->next;
-    if (ft_check_cheapest(cost, *stack_a, *stack_b)) {
+    if (ft_check_cheapest(cost, *stack_a, *stack_b))
+    {
       ft_operation(stack_a, stack_b, pos, 'A');
       tmp = *stack_a;
       pos->node = -1;
+      pos->target = -1;
     }
   }
 }

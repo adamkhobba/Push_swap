@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:17:28 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/28 09:27:47 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/28 10:09:09 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ void ft_still_need_r(t_list **stack_a, t_list **stack_b, t_pos *pos,
 void ft_put_min_top(t_list **stack_a) {
   int pos_min;
   int mid;
+	int len;
 
-  mid = ft_cal_mid(ft_lstsize(*stack_a));
+	len = ft_lstsize(*stack_a);
+  mid = ft_cal_mid(len);
   pos_min = ft_search_min_max(*stack_a, 'm');
   if (pos_min) {
     if (pos_min < mid)
@@ -57,7 +59,7 @@ void ft_put_min_top(t_list **stack_a) {
         pos_min--;
       }
     else
-      while (pos_min < ft_lstsize(*stack_a)) {
+      while (pos_min < len) {
         ft_reverse_rotate(stack_a, 'A');
         pos_min++;
       }
@@ -79,5 +81,5 @@ void ft_turk_back(t_list **stack_a, t_list **stack_b) {
       pos->node = ft_search_min_max(*stack_a, 'm');
     ft_operation(stack_a, stack_b, pos, 'B');
     tmp = *stack_b;
-  }
+	}
 }
