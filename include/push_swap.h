@@ -19,6 +19,8 @@ typedef struct s_pos
 {
 	int				node;
 	int				target;
+	int				len;
+	int				len2;
 }					t_pos;
 
 // free ft
@@ -66,11 +68,11 @@ void				ft_operation(t_list **stack_a, t_list **stack_b, t_pos *pos,
 void				ft_turk_algo(t_list **stack_a, t_list **stack_b);
 int					ft_cal_mid(int len);
 void				ft_turk_back(t_list **stack_a, t_list **stack_b);
-void ft_put_min_top(t_list **stack_a);
-void	ft_still_need_r(t_list **stack_a, t_list **stack_b, t_pos *pos,
-	const char *option);
-void	ft_still_need_rr(t_list **stack_a, t_list **stack_b, t_pos *pos,
-		char const *option);
+void				ft_put_min_top(t_list **stack_a);
+void				ft_still_need_r(t_list **stack_a, t_list **stack_b,
+						t_pos *pos, const char *option);
+void				ft_still_need_rr(t_list **stack_a, t_list **stack_b,
+						t_pos *pos, char const *option);
 // utils ft
 void				ft_putstr(char *s, int fd);
 int					ft_isdigit(int c);

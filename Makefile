@@ -29,7 +29,7 @@ NAME = push_swap
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(OBJ) -o $(NAME) -fsanitize=address
+	$(CC) $(OBJ) -o $(NAME) #-fsanitize=address
 
 
 clean :
