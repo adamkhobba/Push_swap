@@ -53,6 +53,7 @@ void				ft_reverse_rotate(t_list **list, char c);
 int					ft_swap(t_list **lst, char c);
 
 // searching ft
+int ft_search_val_max(t_list *stack);
 int					ft_search_closet_smaller(t_list *stack, int needer);
 int					ft_search_min_max(t_list *stack, char c);
 int					ft_search_target(t_list *stack, int needer, char c);

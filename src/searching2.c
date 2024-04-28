@@ -27,6 +27,23 @@ int	ft_search_min(t_list *stack)
 	}
 	return (-1);
 }
+int ft_search_val_max(t_list *stack)
+{
+	t_list	*tmp;
+	int		max;
+
+	tmp = stack;
+	if (!stack)
+		return (-1);
+	max = tmp->data;
+	while (tmp)
+	{
+		if (tmp->data > max)
+			max = tmp->data;
+		tmp = tmp->next;
+	}
+	return (max);
+}
 
 int	ft_search_max(t_list *stack)
 {
