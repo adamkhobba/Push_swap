@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:17:28 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/27 12:15:34 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/28 09:27:47 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void ft_still_need_rr(t_list **stack_a, t_list **stack_b, t_pos *pos,
     }
   }
   if (option[1] == 'T') {
-    printf("taget=%d", pos->target);
-    printf("len2=%d\n", pos->len2);
     while (pos->target < pos->len2) {
       ft_reverse_rotate(stack_b, 'B');
       pos->target++;

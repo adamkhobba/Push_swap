@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:36:38 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/27 16:08:01 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/28 09:27:07 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void ft_reverse_rotate(t_list **list, char c) {
   if (!*list)
     return;
   tmp = (*list);
-  current = (*list)->next;
-  while (current && current->next) {
+  current = (*list);
+  while (current->next) {
     var = current;
     current = current->next;
   }
