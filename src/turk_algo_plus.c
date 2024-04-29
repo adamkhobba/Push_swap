@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_file.c                                        :+:      :+:    :+:   */
+/*   turk_algo_plus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 15:11:18 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/29 15:19:31 by akhobba          ###   ########.fr       */
+/*   Created: 2024/04/29 15:01:37 by akhobba           #+#    #+#             */
+/*   Updated: 2024/04/29 15:18:18 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_free(char **s, int len, int option)
+void	ft_init_var(t_pos *pos, t_list *stack_a, t_list *stack_b)
 {
-	int	i;
-
-	i = 0;
-	if (option == 1)
-	{
-		while (i < len)
-		{
-			free(s[i]);
-			i++;
-		}
-	}
-	else if (option == 2)
-	{
-		i = 0;
-		while (s[i])
-		{
-			free(s[i]);
-			i++;
-		}
-	}
-	free(s);
+	pos->len = ft_lstsize(stack_a);
+	pos->len2 = ft_lstsize(stack_b);
+	pos->mid = ft_cal_mid(ft_lstsize(stack_a));
+	pos->mid2 = ft_cal_mid(ft_lstsize(stack_b));
 }

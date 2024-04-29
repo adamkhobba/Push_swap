@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/29 15:11:50 by akhobba           #+#    #+#             */
+/*   Updated: 2024/04/29 15:23:52 by akhobba          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
-#include <stdlib.h>
-#include <string.h>
 
 static size_t	ft_count_word(char const *s, char c)
 {
@@ -78,8 +88,8 @@ static int	ft_rspl(char **arr, char const *s, char c)
 
 char	**ft_split(char *s, char c)
 {
-	char **arr;
-	size_t size;
+	char	**arr;
+	size_t	size;
 
 	if (NULL == s)
 		return (NULL);

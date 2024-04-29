@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 09:50:27 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/17 11:58:28 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/29 15:23:14 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_not_soted(char **s)
 {
-	int i;
-	int check;
+	int	i;
+	int	check;
 
 	check = 1;
 	i = 0;

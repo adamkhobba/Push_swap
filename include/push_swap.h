@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/29 15:12:41 by akhobba           #+#    #+#             */
+/*   Updated: 2024/04/29 15:13:19 by akhobba          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -21,6 +32,8 @@ typedef struct s_pos
 	int				target;
 	int				len;
 	int				len2;
+	int				mid;
+	int				mid2;
 }					t_pos;
 
 // free ft
@@ -53,7 +66,7 @@ void				ft_reverse_rotate(t_list **list, char c);
 int					ft_swap(t_list **lst, char c);
 
 // searching ft
-int ft_search_val_max(t_list *stack);
+int					ft_search_val_max(t_list *stack);
 int					ft_search_closet_smaller(t_list *stack, int needer);
 int					ft_search_min_max(t_list *stack, char c);
 int					ft_search_target(t_list *stack, int needer, char c);
@@ -61,6 +74,8 @@ int					ft_search_max(t_list *stack);
 int					ft_neg1_case(t_list *stack);
 
 // turk algo
+void				ft_init_var(t_pos *pos, t_list *stack_a, t_list *stack_b);
+int					ft_init_target(t_pos *pos, int needer, t_list **stack_b);
 void				ft_turk_push_b(t_list **stack_a, t_list **stack_b);
 int					ft_cost_return(int needer, t_list *stack_a, t_list *stack_b,
 						int pos_node);

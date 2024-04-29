@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:31:46 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/17 15:31:47 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/29 15:14:19 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t l;
+	size_t	i;
+	size_t	l;
 
 	i = 0;
 	l = ft_strlen(src);

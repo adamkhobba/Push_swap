@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   searching2.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/29 15:12:04 by akhobba           #+#    #+#             */
+/*   Updated: 2024/04/29 15:19:20 by akhobba          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 int	ft_search_min(t_list *stack)
@@ -27,7 +39,8 @@ int	ft_search_min(t_list *stack)
 	}
 	return (-1);
 }
-int ft_search_val_max(t_list *stack)
+
+int	ft_search_val_max(t_list *stack)
 {
 	t_list	*tmp;
 	int		max;
@@ -75,12 +88,12 @@ int	ft_search_max(t_list *stack)
 
 int	ft_search_min_max(t_list *stack, char c)
 {
-	int	pos_Mn;
+	int	pos_mn;
 
-	pos_Mn = -1;
+	pos_mn = -1;
 	if (c == 'M')
-		pos_Mn = ft_search_max(stack);
+		pos_mn = ft_search_max(stack);
 	else if (c == 'm')
-		pos_Mn = ft_search_min(stack);
-	return (pos_Mn);
+		pos_mn = ft_search_min(stack);
+	return (pos_mn);
 }
