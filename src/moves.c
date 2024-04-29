@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:36:38 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/28 09:27:07 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/29 10:30:58 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int ft_push(t_list **from, t_list **to, char *s) {
   t_list *tmp;
 
-  if (!*from)
+  if (!*from && !*to)
     return (0);
   tmp = (*from);
   (*from) = (*from)->next;
@@ -67,8 +67,9 @@ void ft_reverse_rotate(t_list **list, char c) {
   t_list *current;
   t_list *var;
 
-  if (!*list)
+  if (!*list || ft_lstsize(*list) < 2)
     return;
+  
   tmp = (*list);
   current = (*list);
   while (current->next) {
