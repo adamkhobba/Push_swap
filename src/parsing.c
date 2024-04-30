@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:11:57 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/29 15:23:22 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/30 13:22:53 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,17 +88,17 @@ int	ft_all_checks(char **s)
 {
 	if (!ft_check_num(s))
 	{
-		ft_putstr("Error\n non number(s)", 2);
+		ft_putstr("Error\n", 2);
 		return (0);
 	}
 	if (!ft_bigger_int(s))
 	{
-		ft_putstr("Error\n bigger than max or !", 2);
+		ft_putstr("Error\n", 2);
 		return (0);
 	}
 	if (!ft_dup_num(s))
 	{
-		ft_putstr("Error\n duplicate number(s)", 2);
+		ft_putstr("Error\n", 2);
 		return (0);
 	}
 	if (!ft_not_soted(s))

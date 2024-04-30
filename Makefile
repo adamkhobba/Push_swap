@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adam <adam@student.42.fr>                  +#+  +:+       +#+         #
+#    By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 15:37:22 by akhobba           #+#    #+#              #
-#    Updated: 2024/04/29 20:20:59 by adam             ###   ########.fr        #
+#    Updated: 2024/04/30 11:36:54 by akhobba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,20 +22,42 @@ SRC = src/create_stack.c src/push_swap.c src/moves.c src/sort_five.c src/parsing
 		src/free_file.c src/searching.c src/searching2.c src/moves2.c\
 		src/turk_algo.c src/turk_push_b.c src/turk_back.c src/turk_algo_plus.c
 
+SRC_BONUS = src/create_stack.c src/moves.c src/sort_five.c src/parsing.c \
+		src/split_input.c src/ft_split.c src/not_sorted.c\
+		utils/small_ft.c utils/ft_lstadd_front_bonus.c  utils/ft_atoi.c\
+		utils/ft_lstnew_bonus.c utils/ft_lstdelone_bonus.c\
+		utils/ft_lstsize_bonus.c utils/ft_strdup.c utils/ft_lstclear_bonus.c utils/ft_putstr.c\
+		src/free_file.c src/searching.c src/searching2.c src/moves2.c\
+		src/turk_algo.c src/turk_push_b.c src/turk_back.c src/turk_algo_plus.c\
+		bonus/src_bonus/action.c bonus/src_bonus/checker.c 	bonus/src_bonus/is_sorted.c\
+		bonus/utils_bonus/get_next_line.c 
+
+CLEAN = bonus/src_bonus/action.c bonus/src_bonus/checker.c 	bonus/src_bonus/is_sorted.c\
+		bonus/utils_bonus/get_next_line.c 
 OBJ = ${SRC:.c=.o}
+
+OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
 NAME = push_swap
 
-all: $(NAME)
+NAME_BONUS = checker
+
+all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(OBJ) -o $(NAME) #-fsanitize=address
+	$(CC) $(OBJ) -o $(NAME)
 
+bonus : $(NAME_BONUS)
+
+$(NAME_BONUS) : $(OBJ_BONUS)
+	$(CC) $(OBJ_BONUS) -o $(NAME_BONUS)
 
 clean :
 	rm -r $(OBJ)
+	rm -r ${CLEAN:.c=.o}
 
 fclean : clean
 	rm -r $(NAME)
+	rm -r $(NAME_BONUS)
 
 re : fclean all

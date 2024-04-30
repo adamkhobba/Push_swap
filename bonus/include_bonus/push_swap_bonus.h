@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 15:12:41 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/30 11:29:29 by akhobba          ###   ########.fr       */
+/*   Created: 2024/04/30 09:48:12 by akhobba           #+#    #+#             */
+/*   Updated: 2024/04/30 11:29:59 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../utils_bonus/get_next_line.h"
+
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
 
 typedef struct s_list
 {
 	int				data;
 	struct s_list	*next;
 }					t_list;
-
-typedef struct s_pos
-{
-	int				node;
-	int				target;
-	int				len;
-	int				len2;
-	int				mid;
-	int				mid2;
-}					t_pos;
 
 // free ft
 void				ft_free(char **s, int len, int option);
@@ -73,35 +62,13 @@ int					ft_search_target(t_list *stack, int needer, char c);
 int					ft_search_max(t_list *stack);
 int					ft_neg1_case(t_list *stack);
 
-// turk algo
-void				ft_init_var(t_pos *pos, t_list *stack_a, t_list *stack_b);
-int					ft_init_target(t_pos *pos, int needer, t_list **stack_b);
-void				ft_turk_push_b(t_list **stack_a, t_list **stack_b);
-int					ft_cost_return(int needer, t_list *stack_a, t_list *stack_b,
-						int pos_node);
-void				ft_operation(t_list **stack_a, t_list **stack_b, t_pos *pos,
-						char option);
-void				ft_turk_algo(t_list **stack_a, t_list **stack_b);
-int					ft_cal_mid(int len);
-void				ft_turk_back(t_list **stack_a, t_list **stack_b);
-void				ft_put_min_top(t_list **stack_a);
-void				ft_still_need_r(t_list **stack_a, t_list **stack_b,
-						t_pos *pos, const char *option);
-void				ft_still_need_rr(t_list **stack_a, t_list **stack_b,
-						t_pos *pos, char const *option);
 // utils ft
 void				ft_putstr(char *s, int fd);
 int					ft_isdigit(int c);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				**ft_strdup_pro(char **s);
-char				*ft_strdup(const char *s);
 int					ft_count_strs(char **s);
-int					ft_strlen(const char *str);
 long				ft_atoi(const char *nptr);
-char				*ft_strjoin(char const *s1, char const *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-char				*ft_strdup(const char *s);
-size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 
 // list ft
 t_list				*ft_create_node(int nbr);
@@ -116,5 +83,11 @@ void				ft_lstdelone(t_list *lst);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+// src bonus ft
+void	ft_action(t_list **stack_a, t_list **stack_b, char *move);
+void	ft_multi_action(t_list **stack_a, t_list **stack_b);
+int ft_is_ok_ko(t_list *stack_a, char **s);
+int ft_check_num_num(t_list *stack_a, char **s);
+int ft_is_sorted(t_list *stack_a);
 
-#endif
+# endif

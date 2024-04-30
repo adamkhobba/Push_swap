@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:36:38 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/29 10:30:58 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/04/30 16:20:44 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_push(t_list **from, t_list **to, char *s)
 {
 	t_list	*tmp;
 
-	if (!*from && !*to)
+	if (!*from)
 		return (0);
 	tmp = (*from);
 	(*from) = (*from)->next;
