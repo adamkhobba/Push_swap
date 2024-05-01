@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:11:57 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/30 13:22:53 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/01 11:55:45 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,7 @@ int	ft_dup_num(char **s)
 		{
 			if (j != i)
 			{
-				if (ft_strncmp(s[i], s[j], max(ft_strlen(s[i]),
-							ft_strlen(s[j]))) == 0)
+				if (ft_atoi(s[i]) == ft_atoi(s[j]))
 					return (0);
 			}
 			j++;
