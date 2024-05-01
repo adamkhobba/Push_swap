@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:12:41 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/30 11:29:29 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/01 11:10:21 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,9 @@ void				ft_sort_three(t_list **stack);
 int					ft_not_soted(char **s);
 int					ft_all_checks(char **s);
 int					max(int a, int b);
-
+int					ft_check_num(char **s);
+int					ft_bigger_int(char **s);
+int					ft_dup_num(char **s);
 // move ft
 void				ft_swap_two(t_list **stack_a, t_list **stack_b);
 void				ft_rotate_two(t_list **stack_a, t_list **stack_b);
@@ -92,14 +94,14 @@ void				ft_still_need_rr(t_list **stack_a, t_list **stack_b,
 // utils ft
 void				ft_putstr(char *s, int fd);
 int					ft_isdigit(int c);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strncmp(const char *s1, const char *s2, ssize_t n);
 char				**ft_strdup_pro(char **s);
 char				*ft_strdup(const char *s);
 int					ft_count_strs(char **s);
 int					ft_strlen(const char *str);
 long				ft_atoi(const char *nptr);
 char				*ft_strjoin(char const *s1, char const *s2);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strncmp(const char *s1, const char *s2, ssize_t n);
 char				*ft_strdup(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 

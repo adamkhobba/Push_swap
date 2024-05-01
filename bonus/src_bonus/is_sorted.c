@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 10:22:42 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/30 15:33:52 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/01 11:07:25 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	ft_is_sorted(t_list *stack_a)
 	}
 	if (counter == ft_lstsize(stack_a))
 		return (1);
-	// printf("counter=%d len=%d\n", counter, ft_lstsize(stack_a));
 	return (0);
 }
 

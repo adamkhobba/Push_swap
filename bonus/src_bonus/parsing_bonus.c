@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 16:22:37 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/29 15:16:58 by akhobba          ###   ########.fr       */
+/*   Created: 2024/05/01 11:02:57 by akhobba           #+#    #+#             */
+/*   Updated: 2024/05/01 11:12:13 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include_bonus/push_swap_bonus.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_parsing_bonus(char **s)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
+	if (!ft_check_num(s))
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		ft_putstr("Error\n", 2);
+		return (0);
 	}
-	return (0);
+	if (!ft_bigger_int(s))
+	{
+		ft_putstr("Error\n", 2);
+		return (0);
+	}
+	if (!ft_dup_num(s))
+	{
+		ft_putstr("Error\n", 2);
+		return (0);
+	}
+	return (1);
 }

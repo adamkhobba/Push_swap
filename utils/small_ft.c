@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:16:23 by akhobba           #+#    #+#             */
-/*   Updated: 2024/04/29 15:16:30 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/01 11:00:11 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,28 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, ssize_t n)
 {
-	size_t	i;
+	ssize_t	i;
 
 	i = 0;
-	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
+	if (n == -1)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		while (s1[i] || s2[i])
+		{
+			if (s1[i] != s2[i])
+				return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+			i++;
+		}
+	}
+	else
+	{
+		while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
+		{
+			if (s1[i] != s2[i])
+				return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+			i++;
+		}
 	}
 	return (0);
 }
