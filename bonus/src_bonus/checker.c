@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:44:46 by akhobba           #+#    #+#             */
-/*   Updated: 2024/05/01 13:47:00 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/01 15:45:55 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,17 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac < 2 || !av[1][0])
-		return (1);
-	s = split_input(ac, av + 1);
+	if (ac < 2)
+		return (0);
+	if (!ft_check_av(ac, av) || !av[1][0])
+	{
+		ft_putstr("Error\n", 2);
+		return (0);
+	}s = split_input(ac, av + 1);
 	if (!ft_parsing_bonus(s))
 	{
 		ft_free(s, 0, 2);
-		return (1);
+		return (0);
 	}
 	stack_a = create_stack_a(s);
 	ft_multi_action(&stack_a, &stack_b);

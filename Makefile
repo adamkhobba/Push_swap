@@ -6,7 +6,7 @@
 #    By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 15:37:22 by akhobba           #+#    #+#              #
-#    Updated: 2024/05/01 11:08:49 by akhobba          ###   ########.fr        #
+#    Updated: 2024/05/01 16:07:50 by akhobba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,11 +54,10 @@ $(NAME_BONUS) : $(OBJ_BONUS)
 	$(CC) $(OBJ_BONUS) -o $(NAME_BONUS)
 
 clean :
-	rm -r $(OBJ)
-	rm -r ${CLEAN:.c=.o}
+	rm -rf $(OBJ) ${CLEAN:.c=.o} 
 
 fclean : clean
-	rm -r $(NAME)
-	rm -r $(NAME_BONUS)
+	rm -rf $(NAME)
+	rm -rf $(NAME_BONUS)
 
 re : fclean all

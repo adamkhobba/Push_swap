@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:12:41 by akhobba           #+#    #+#             */
-/*   Updated: 2024/05/01 11:10:21 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/01 15:41:44 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int					max(int a, int b);
 int					ft_check_num(char **s);
 int					ft_bigger_int(char **s);
 int					ft_dup_num(char **s);
+int ft_check_av(int ac, char **av);
+
 // move ft
 void				ft_swap_two(t_list **stack_a, t_list **stack_b);
 void				ft_rotate_two(t_list **stack_a, t_list **stack_b);
