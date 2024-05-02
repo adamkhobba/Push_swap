@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:12:41 by akhobba           #+#    #+#             */
-/*   Updated: 2024/05/01 15:41:44 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/02 09:43:12 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char				*ft_strdup(const char *s);
 int					ft_count_strs(char **s);
 int					ft_strlen(const char *str);
 long				ft_atoi(const char *nptr);
-char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin(char *s1, char const *s2);
 int					ft_strncmp(const char *s1, const char *s2, ssize_t n);
 char				*ft_strdup(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);

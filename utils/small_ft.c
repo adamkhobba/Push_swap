@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:16:23 by akhobba           #+#    #+#             */
-/*   Updated: 2024/05/01 11:00:11 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/02 09:42:20 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (l);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	size_t	l1;
 	size_t	l2;
@@ -93,5 +93,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strlcpy(p, s1, l1 + 1);
 	ft_strlcpy(p + l1, s2, l2 + 1);
+	free(s1);
 	return (p);
 }

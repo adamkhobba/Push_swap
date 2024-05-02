@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:48:12 by akhobba           #+#    #+#             */
-/*   Updated: 2024/05/01 15:46:36 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/02 09:51:01 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 // src bonus ft
 void				ft_action(t_list **stack_a, t_list **stack_b, char *move);
-void				ft_multi_action(t_list **stack_a, t_list **stack_b);
+void				ft_multi_action(t_list **stack_a, t_list **stack_b,
+						char **s);
 int					ft_is_ok_ko(t_list *stack_a, char **s);
 int					ft_check_num_num(t_list *stack_a, char **s);
 int					ft_is_sorted(t_list *stack_a);

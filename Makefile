@@ -6,7 +6,7 @@
 #    By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 15:37:22 by akhobba           #+#    #+#              #
-#    Updated: 2024/05/02 09:16:27 by akhobba          ###   ########.fr        #
+#    Updated: 2024/05/02 09:21:39 by akhobba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ $(NAME) : $(OBJ)
 bonus : $(NAME_BONUS)
 
 $(NAME_BONUS) : $(OBJ_BONUS)
-	$(CC) $(OBJ_BONUS) -o $(NAME_BONUS) -fsanitize=address -g3
+	$(CC) $(OBJ_BONUS) -o $(NAME_BONUS)
 
 clean :
 	rm -rf $(OBJ) ${CLEAN:.c=.o} 
