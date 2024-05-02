@@ -58,7 +58,7 @@ int					max(int a, int b);
 int					ft_check_num(char **s);
 int					ft_bigger_int(char **s);
 int					ft_dup_num(char **s);
-int ft_check_av(int ac, char **av);
+int					ft_check_av(int ac, char **av);
 
 // move ft
 void				ft_swap_two(t_list **stack_a, t_list **stack_b);

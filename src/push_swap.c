@@ -12,8 +12,6 @@
 
 #include "../include/push_swap.h"
 
-
-
 int	main(int ac, char **av)
 {
 	t_list	*a;
@@ -29,7 +27,7 @@ int	main(int ac, char **av)
 	{
 		ft_putstr("Error\n", 2);
 		return (0);
-	}	
+	}
 	s = split_input(ac, av + 1);
 	if (!ft_all_checks(s))
 	{

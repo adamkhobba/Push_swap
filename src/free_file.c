@@ -12,18 +12,18 @@
 
 #include "../include/push_swap.h"
 
-int ft_check_av(int ac, char **av)
+int	ft_check_av(int ac, char **av)
 {
-	int i;
-	int j;
-	int counter;
+	int	i;
+	int	j;
+	int	counter;
 
 	i = 1;
 	while (i < ac)
 	{
 		j = 0;
 		counter = 0;
-		while(av[i][j] && av[i][j])
+		while (av[i][j] && av[i][j])
 		{
 			if (av[i][j] == ' ')
 				counter++;

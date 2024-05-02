@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:02:57 by akhobba           #+#    #+#             */
-/*   Updated: 2024/05/01 13:53:49 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/02 09:08:13 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_chech_rr(char *move, int *checker)
 	if (!ft_strncmp(move, "ra\n", -1))
 		(*checker)++;
 	if (!ft_strncmp(move, "rb\n", -1))
+		(*checker)++;
+	if (!ft_strncmp(move, "rr\n", -1))
 		(*checker)++;
 	if (!ft_strncmp(move, "rra\n", -1))
 		(*checker)++;
@@ -53,16 +55,19 @@ int	ft_parsing_bonus(char **s)
 	if (!ft_check_num(s))
 	{
 		ft_putstr("Error\n", 2);
+		ft_free(s, 0, 2);
 		return (0);
 	}
 	if (!ft_bigger_int(s))
 	{
 		ft_putstr("Error\n", 2);
+		ft_free(s, 0, 2);
 		return (0);
 	}
 	if (!ft_dup_num(s))
 	{
 		ft_putstr("Error\n", 2);
+		ft_free(s, 0, 2);
 		return (0);
 	}
 	return (1);
