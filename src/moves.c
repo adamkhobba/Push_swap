@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:36:38 by akhobba           #+#    #+#             */
-/*   Updated: 2024/05/01 10:56:37 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/03 06:30:49 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_swap(t_list **lst, char c)
 {
 	int	tmp;
 
-	if (!*lst)
+	if (!*lst || ft_lstsize(*lst) < 2)
 		return (0);
 	tmp = (*lst)->data;
 	(*lst)->data = (*lst)->next->data;
@@ -50,7 +50,7 @@ void	ft_rotate(t_list **list, char c)
 	t_list	*tmp;
 	t_list	*current;
 
-	if (!*list)
+	if (!*list || ft_lstsize(*list) < 2)
 		return ;
 	tmp = (*list);
 	current = (*list)->next;

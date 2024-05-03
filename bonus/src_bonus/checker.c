@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:44:46 by akhobba           #+#    #+#             */
-/*   Updated: 2024/05/02 09:50:37 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/03 06:37:08 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_multi_action(t_list **stack_a, t_list **stack_b, char **s)
 		{
 			ft_putstr("Error\n", 2);
 			free(line);
-			return ;
+			exit(1);
 		}
 		ft_action(stack_a, stack_b, line);
 		free(line);

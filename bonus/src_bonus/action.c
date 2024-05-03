@@ -6,7 +6,7 @@
 /*   By: akhobba <akhobba@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:51:09 by akhobba           #+#    #+#             */
-/*   Updated: 2024/05/01 11:13:52 by akhobba          ###   ########.fr       */
+/*   Updated: 2024/05/03 06:33:37 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	ft_action_reverse_rotate(t_list **stack_a, t_list **stack_b, char *move)
 
 void	ft_action(t_list **stack_a, t_list **stack_b, char *move)
 {
-	if (!ft_strncmp(move, "pa", -1))
+	if (!ft_strncmp(move, "pa\n", -1))
 		ft_push(stack_b, stack_a, "HH");
-	if (!ft_strncmp(move, "pb", -1))
+	if (!ft_strncmp(move, "pb\n", -1))
 		ft_push(stack_a, stack_b, "HH");
 	ft_action_rotate(stack_a, stack_b, move);
 	ft_action_swap(stack_a, stack_b, move);
